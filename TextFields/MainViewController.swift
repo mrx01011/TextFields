@@ -541,7 +541,7 @@ extension MainViewController {
             enum RulesLabel {
                 static let side: CGFloat = 24
                 static let top: CGFloat = 8
-                static let spacing: CGFloat = 3
+                static let spacing: CGFloat = 5
                 static let bottom: CGFloat = {
                     let window = UIApplication.shared.windows.first
                     let bottomPadding = window?.safeAreaInsets.bottom ?? 0
