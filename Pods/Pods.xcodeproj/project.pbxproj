@@ -1,0 +1,1311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00A2749F46C967ED4725A32357E3FB1B /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5128D0C1B120A233109D98976D64B7 /* ConstraintLayoutSupport.swift */; };
+		02708F5BC787A728A6A909A3AF5CB0D3 /* Pods-TextFields-TextFieldsUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C38C822E3DB39E3FB1B238DCBE32C076 /* Pods-TextFields-TextFieldsUITests-dummy.m */; };
+		04637C70546B34F93C3A1D79C3F78B37 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659094BC2C8F8886E1B7AFB76DB63A0D /* ConstraintDirectionalInsetTarget.swift */; };
+		0591132B5EA1BE4DDA268D8A9C3D0421 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2644BF3483FCB3680A56B6AD067C5088 /* LayoutConstraint.swift */; };
+		06E43B4751069B47B3BD4AFD936A57E3 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A07848E8EDBA5FE27ECC7F5C953B1E /* ConstraintPriority.swift */; };
+		0833E66E7F19849322305D67777B77DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		0B994CDC79B1AD3A7BE62490D27C60C8 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47359E6278C5C7747572FB0783FB8345 /* ConstraintAttributes.swift */; };
+		183D8B3E057B885EA7DF9A8CDCCE9029 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C1D0FEA5D6FDC5110FB63304BE929C /* ConstraintMakerRelatable.swift */; };
+		1BE773024F0C14DA3E6AED3E3DCF3F71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		1EB189EF655AEC27C8DFC494655F55B7 /* Pods-TextFields-TextFieldsUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 065C3105D5D089302DD7B6765F9461BC /* Pods-TextFields-TextFieldsUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		220D6AC9B1B1EC8EFFB204F9C1EAC842 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F097360F41CC26E7AE07629602E5EF /* ConstraintMakerEditable.swift */; };
+		256558233B40ACA6818F143BBC5B8017 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B307A5A3105443E98F183A305D6B7B /* ConstraintViewDSL.swift */; };
+		3660B4F629053ABC3C1DF69366770289 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A783502D8ED1CAB596A6A80ED2C3F86 /* ConstraintConfig.swift */; };
+		38B9D58E94D9C1CECD7E381C64A2329D /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D766E5A0BA58E460F85CCBA0F7067F07 /* UILayoutSupport+Extensions.swift */; };
+		42B6ACFCF650183030867CB3EF345E95 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA84F545180B2CC01B76AAB4031EB0E /* ConstraintMakerFinalizable.swift */; };
+		4BAD99B7394E225CEDBF94B8100BCC7F /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C863AC608909F670D6DD0761269B7402 /* ConstraintRelation.swift */; };
+		4DA72FD7F1FB2C0449EDEF4B8A579807 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96EC607BBDD0AA972D074683D6994B8A /* ConstraintPriorityTarget.swift */; };
+		5380454C48A12A6E376122ABD8096968 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2A95F2FA97A6A1C4BEEEB9937A15DB /* ConstraintDescription.swift */; };
+		55E51F45F1E157D3B4942BA7252C277E /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4DCEFCD609C84CBEE0DF61BC1DF80 /* ConstraintRelatableTarget.swift */; };
+		56A72F6D13D930C4A2568F24DEA33C8D /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2356AE1943FCD66B0FDAB8739732310 /* ConstraintLayoutSupportDSL.swift */; };
+		56AC6DC6459AE47E7BC4AF06E5B148D2 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F175422572195F3C19780C8B8231CC23 /* ConstraintDSL.swift */; };
+		5D36B99F3CAB1FC7337082D9581FECA6 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5EB118E81FF719B9892D8D92CB49DD /* Debugging.swift */; };
+		604D3C93C17978C23600EC415949AB64 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983E59759304B4EC5374F09F62FB688D /* ConstraintInsets.swift */; };
+		611CEF7FF1EF9EA1BCEF6C73EEE3ACCF /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D89DB8AF4E3AA2F0C5E31193BFE606 /* ConstraintLayoutGuide.swift */; };
+		69DE75BA185BBAB5FDAA28321F3C849F /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA372ACE790D82F29B01170A45E892EF /* ConstraintItem.swift */; };
+		6AC1B881BB319C89AD023A02CDC8FC3D /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266C1C7E2473D2116D6FFB962416967 /* ConstraintLayoutGuide+Extensions.swift */; };
+		6EAC8B6FA2D115DE708A58C601DD25E1 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF675BF140377214EBA539C837D592 /* Constraint.swift */; };
+		7463B95F4B64C0909F7A9F1F5389D4B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8E4ABCFBE24FC7211069EC98559FE20B /* Pods-TextFields-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C84A37775643F4B1BFD9024C5A96089A /* Pods-TextFields-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95E194A3AABB5407231E898B6686F73E /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77D644F6F3371E72F54D8151E031080 /* ConstraintMakerRelatable+Extensions.swift */; };
+		98F570DA48370453D648BD526FDAAEAA /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDCC1340C53E16C5421AFE232A87B84 /* LayoutConstraintItem.swift */; };
+		9A5845DFBE1D4EC429B685C307C63035 /* Pods-TextFieldsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0210EC8E7DF13D2D703FBB89E49AEBA /* Pods-TextFieldsTests-dummy.m */; };
+		9C9548E8B4675954566202F7B87FF0E6 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B4F34E1908EFD233A0457206EAAE1 /* ConstraintConstantTarget.swift */; };
+		9CD404D17F6C413ECD9A428771688887 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9E02CFFEFE1BEC978B512286F03D31DA /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BBCAFA07020EF1EFD688CEAB267D47 /* ConstraintInsetTarget.swift */; };
+		A03FDA8BC5741880B1EF11AFD248EF48 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB5EB21F9F944D0F2E294CFB359D098 /* ConstraintOffsetTarget.swift */; };
+		A3E3AB7C765C21AE17B1E6EE6560040C /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 443A33BAF950E33358D4F6C7FBAB35A2 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5A8BF973BFE9C9304372A26C9F2E35B /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F25A471169FC42FB4153088911059F /* ConstraintMakerExtendable.swift */; };
+		B03B5579590D528CBA6D11FF638BC2AF /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4E9F67096544299A4C1EAA71C84F0 /* Typealiases.swift */; };
+		B43017FEC99D227D4CDD81DD2C27D9D9 /* ConstraintMakerPrioritizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650C36CA2B980DCF973D6CE35613CC3A /* ConstraintMakerPrioritizable.swift */; };
+		B58C15507CA715B99CB9C3B77FC35F56 /* JMStringMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF81BD055AD55DD780EA2AA57D63B4C2 /* JMStringMask.swift */; };
+		B752F7C4BECB65894B1F49421049CE5F /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D588D6C3D2901B104FFFF01673D4D45 /* ConstraintView.swift */; };
+		BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 287561D84D56269525627BD669C4F58A /* SnapKit-dummy.m */; };
+		C6216DE80EE791E182CB1B8CBA5EFFC0 /* JMMaskTextField-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E76BF4F280BEFECE6C3229C9B3AE273A /* JMMaskTextField-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDAE8ED280F796CBB0E8941EECB818DD /* Pods-TextFieldsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70F5080EE668E50F2E03B54FF7323238 /* Pods-TextFieldsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9918B7CC2DF1B945971FE215E4421E6 /* JMMaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AFFF62AF3B8AC942C982020481B2E6 /* JMMaskTextField.swift */; };
+		DC40238E7BF47BBFC4E999C1CD8280EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E36CB72E3E4EE4CE94C8639EA471C7DD /* JMMaskTextField-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 542A003D5CE501441AF379EA015F213F /* JMMaskTextField-Swift-dummy.m */; };
+		E98DC8FB2578E76A812E0C94BA10E1B1 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CD1D6995FA9D13C63E01CD856B0095 /* ConstraintDirectionalInsets.swift */; };
+		EF21586EC3DFF6097A58EEC87376A0C1 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7DE144647F2CCEB88147C4437812DD /* ConstraintLayoutGuideDSL.swift */; };
+		F7C0960CEEB8F0C18F4503B405EAC08F /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD13A793BBAA426EE8D23AB6FE6D59 /* ConstraintMultiplierTarget.swift */; };
+		F953AA9104BFE0C2DAD639EA60104A75 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6323C941CB6834633FD3012F71F555B3 /* ConstraintView+Extensions.swift */; };
+		FAB03959C2357E325B19E08BC4775DAB /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DA6CD3E7F35376226ED5CD6C7919F /* ConstraintMaker.swift */; };
+		FDC00B95CEFEF51DC0F5D4E0F6FED05D /* Pods-TextFields-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4051522D4247C439AA930619021C7EB2 /* Pods-TextFields-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		521006AB25030359E21427CD4D9756D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41AD653E57BDA8A821CF9012AAD26EF2;
+			remoteInfo = "Pods-TextFields";
+		};
+		8EA975C5F77D1C98F0017F2CC592F292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
+			remoteInfo = SnapKit;
+		};
+		AFD7E2642B21E7DCE4CF0763FF080E35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
+			remoteInfo = SnapKit;
+		};
+		C6D68CD87B5FBF62A2D9C17BCB855190 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AD7F58830DF3D4D32A666527D4FDF8F;
+			remoteInfo = "JMMaskTextField-Swift";
+		};
+		E888FC989F0C3EEB0FAF735B8FD72AD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AD7F58830DF3D4D32A666527D4FDF8F;
+			remoteInfo = "JMMaskTextField-Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		028B4F34E1908EFD233A0457206EAAE1 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Sources/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
+		065C3105D5D089302DD7B6765F9461BC /* Pods-TextFields-TextFieldsUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextFields-TextFieldsUITests-umbrella.h"; sourceTree = "<group>"; };
+		14C1D0FEA5D6FDC5110FB63304BE929C /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Sources/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		1B5EB118E81FF719B9892D8D92CB49DD /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Sources/Debugging.swift; sourceTree = "<group>"; };
+		1CB5EB21F9F944D0F2E294CFB359D098 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Sources/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
+		1D1DA6CD3E7F35376226ED5CD6C7919F /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Sources/ConstraintMaker.swift; sourceTree = "<group>"; };
+		2266C1C7E2473D2116D6FFB962416967 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Sources/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
+		24BBCAFA07020EF1EFD688CEAB267D47 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Sources/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
+		24D0286EF59C39A3EDD358BCE2023533 /* Pods-TextFields-TextFieldsUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFields-TextFieldsUITests-Info.plist"; sourceTree = "<group>"; };
+		2644BF3483FCB3680A56B6AD067C5088 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Sources/LayoutConstraint.swift; sourceTree = "<group>"; };
+		26F097360F41CC26E7AE07629602E5EF /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Sources/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		287561D84D56269525627BD669C4F58A /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
+		28C4AAF26838E99164691F3B51C9D933 /* Pods-TextFields-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFields-Info.plist"; sourceTree = "<group>"; };
+		2FFFFD1C76A6A8DA16782994B10D4969 /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		30DD13A793BBAA426EE8D23AB6FE6D59 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Sources/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		31161FAE9F7DC64CB7C857EF24E38DA6 /* JMMaskTextField-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JMMaskTextField-Swift-Info.plist"; sourceTree = "<group>"; };
+		36A07848E8EDBA5FE27ECC7F5C953B1E /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Sources/ConstraintPriority.swift; sourceTree = "<group>"; };
+		3B1A2CF7E38B31615EC91E2A7B48FB6C /* Pods-TextFields-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TextFields-frameworks.sh"; sourceTree = "<group>"; };
+		3FC00C439BDA3CD9703924BAF4BBADB5 /* JMMaskTextField-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JMMaskTextField-Swift-prefix.pch"; sourceTree = "<group>"; };
+		4051522D4247C439AA930619021C7EB2 /* Pods-TextFields-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFields-dummy.m"; sourceTree = "<group>"; };
+		415B4467E02A42C290DCD8CC4D108DE6 /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
+		443A33BAF950E33358D4F6C7FBAB35A2 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		454981182A8773A431B970D44A6990C3 /* Pods-TextFieldsTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextFieldsTests"; path = Pods_TextFieldsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47359E6278C5C7747572FB0783FB8345 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Sources/ConstraintAttributes.swift; sourceTree = "<group>"; };
+		4AA84F545180B2CC01B76AAB4031EB0E /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Sources/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
+		4AE4E9F67096544299A4C1EAA71C84F0 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Sources/Typealiases.swift; sourceTree = "<group>"; };
+		4D3051FC286C8EB533F28D8F2D38B72F /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
+		542A003D5CE501441AF379EA015F213F /* JMMaskTextField-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JMMaskTextField-Swift-dummy.m"; sourceTree = "<group>"; };
+		5F1A570F686E9C3D4EF376705C518EFB /* Pods-TextFieldsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFieldsTests.modulemap"; sourceTree = "<group>"; };
+		5F6305A6BF2C7B8E93D16487F20539E4 /* Pods-TextFields-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextFields-acknowledgements.markdown"; sourceTree = "<group>"; };
+		610C1A14519F7603808754286070B065 /* Pods-TextFields.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFields.modulemap"; sourceTree = "<group>"; };
+		6323C941CB6834633FD3012F71F555B3 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Sources/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
+		64B392386794F594ADCFC1F48F7A908D /* Pods-TextFieldsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextFieldsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		650C36CA2B980DCF973D6CE35613CC3A /* ConstraintMakerPrioritizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPrioritizable.swift; path = Sources/ConstraintMakerPrioritizable.swift; sourceTree = "<group>"; };
+		659094BC2C8F8886E1B7AFB76DB63A0D /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Sources/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
+		660DD693540E4345FB1B1B5B07519F6B /* Pods-TextFields-TextFieldsUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFields-TextFieldsUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		69A7F774308E3B86DE65CD1C48F30651 /* Pods-TextFields-TextFieldsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFields-TextFieldsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6A2EF89A4E0AAEE6EB424EA737D2F099 /* JMMaskTextField-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JMMaskTextField-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		6D8E4E3A979781DB31DED3E1D1AE3982 /* Pods-TextFields-TextFieldsUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TextFields-TextFieldsUITests-frameworks.sh"; sourceTree = "<group>"; };
+		6EAA644B0E5E1C7D7019308FB04C84EC /* Pods-TextFields */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextFields"; path = Pods_TextFields.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70F5080EE668E50F2E03B54FF7323238 /* Pods-TextFieldsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextFieldsTests-umbrella.h"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7B2D593F56BA6DD92054D5D378C83689 /* Pods-TextFieldsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D588D6C3D2901B104FFFF01673D4D45 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Sources/ConstraintView.swift; sourceTree = "<group>"; };
+		8142E6E762141576BC5ECE98B18088EF /* Pods-TextFields-TextFieldsUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TextFields-TextFieldsUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		81724D054015B940EB162275A3F9CB65 /* Pods-TextFields.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFields.debug.xcconfig"; sourceTree = "<group>"; };
+		81F25A471169FC42FB4153088911059F /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Sources/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
+		84B307A5A3105443E98F183A305D6B7B /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Sources/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		84DF675BF140377214EBA539C837D592 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Sources/Constraint.swift; sourceTree = "<group>"; };
+		85B4DCEFCD609C84CBEE0DF61BC1DF80 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Sources/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		893BC8A60D1EE8642B60C4490442C577 /* Pods-TextFields-TextFieldsUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TextFields-TextFieldsUITests.modulemap"; sourceTree = "<group>"; };
+		8A993D5E4FC1DB963BB06D2D192EBCF1 /* Pods-TextFields-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFields-acknowledgements.plist"; sourceTree = "<group>"; };
+		8DDCC1340C53E16C5421AFE232A87B84 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Sources/LayoutConstraintItem.swift; sourceTree = "<group>"; };
+		91C63A152F685DFD0EB32901B1AA1CFF /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
+		96AC3851574DBD0F7D02D28D107F0BAC /* Pods-TextFields.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFields.release.xcconfig"; sourceTree = "<group>"; };
+		96C16C4E0FFE80C1C92F3AA89AB71D10 /* Pods-TextFields-TextFieldsUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TextFields-TextFieldsUITests"; path = Pods_TextFields_TextFieldsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96EC607BBDD0AA972D074683D6994B8A /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Sources/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
+		979486118B3E90C08386079D57962701 /* SnapKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		983E59759304B4EC5374F09F62FB688D /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Sources/ConstraintInsets.swift; sourceTree = "<group>"; };
+		9A783502D8ED1CAB596A6A80ED2C3F86 /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Sources/ConstraintConfig.swift; sourceTree = "<group>"; };
+		9C5128D0C1B120A233109D98976D64B7 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Sources/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F372A3233A9851D67592EE295B2E538 /* Pods-TextFieldsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldsTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		A2D89DB8AF4E3AA2F0C5E31193BFE606 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Sources/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		AFC2E40FE0901DB9DE6EEFE16973E5B9 /* JMMaskTextField-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "JMMaskTextField-Swift.modulemap"; sourceTree = "<group>"; };
+		B38FF3B1D96B4076A4660D8B3F674D3F /* JMMaskTextField-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "JMMaskTextField-Swift"; path = JMMaskTextField_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA372ACE790D82F29B01170A45E892EF /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Sources/ConstraintItem.swift; sourceTree = "<group>"; };
+		BA37D6263D0A4A06819338D10F69CA30 /* JMMaskTextField-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "JMMaskTextField-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		C2356AE1943FCD66B0FDAB8739732310 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Sources/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
+		C38C822E3DB39E3FB1B238DCBE32C076 /* Pods-TextFields-TextFieldsUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFields-TextFieldsUITests-dummy.m"; sourceTree = "<group>"; };
+		C77D644F6F3371E72F54D8151E031080 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintMakerRelatable+Extensions.swift"; path = "Sources/ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
+		C84A37775643F4B1BFD9024C5A96089A /* Pods-TextFields-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TextFields-umbrella.h"; sourceTree = "<group>"; };
+		C863AC608909F670D6DD0761269B7402 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Sources/ConstraintRelation.swift; sourceTree = "<group>"; };
+		C96C58F008A08D2EB3EDF07D762D1FBC /* Pods-TextFieldsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFieldsTests.release.xcconfig"; sourceTree = "<group>"; };
+		D766E5A0BA58E460F85CCBA0F7067F07 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Sources/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
+		DAD1515CD927C36DE95CA239236E2505 /* Pods-TextFieldsTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TextFieldsTests-Info.plist"; sourceTree = "<group>"; };
+		E0210EC8E7DF13D2D703FBB89E49AEBA /* Pods-TextFieldsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TextFieldsTests-dummy.m"; sourceTree = "<group>"; };
+		E76BF4F280BEFECE6C3229C9B3AE273A /* JMMaskTextField-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JMMaskTextField-Swift-umbrella.h"; sourceTree = "<group>"; };
+		EB2A95F2FA97A6A1C4BEEEB9937A15DB /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Sources/ConstraintDescription.swift; sourceTree = "<group>"; };
+		EF81BD055AD55DD780EA2AA57D63B4C2 /* JMStringMask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JMStringMask.swift; path = JMMaskTextField/Classes/JMStringMask.swift; sourceTree = "<group>"; };
+		F175422572195F3C19780C8B8231CC23 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Sources/ConstraintDSL.swift; sourceTree = "<group>"; };
+		F433FA6BF1B781A4BC3812A312EAF220 /* Pods-TextFields-TextFieldsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TextFields-TextFieldsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F44F6748824957C11432D5136E70BB29 /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
+		F6CD1D6995FA9D13C63E01CD856B0095 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Sources/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
+		F7AFFF62AF3B8AC942C982020481B2E6 /* JMMaskTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JMMaskTextField.swift; path = JMMaskTextField/Classes/JMMaskTextField.swift; sourceTree = "<group>"; };
+		FC7DE144647F2CCEB88147C4437812DD /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Sources/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26820631EAE8518D0C9E716211E3CE0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7463B95F4B64C0909F7A9F1F5389D4B4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C8D3F7E02FBB3991C0AF6F70629A1A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC40238E7BF47BBFC4E999C1CD8280EA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0D38AC46472DAF7D29650E37DA75728 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CD404D17F6C413ECD9A428771688887 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2B9B85049FEC09FBFD00AEC9AB64021 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BE773024F0C14DA3E6AED3E3DCF3F71 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8E4E7CE8309D3EF7B7476AC57986BE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0833E66E7F19849322305D67777B77DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C51310DD58AF751D2CD5E885EA32320 /* JMMaskTextField-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				F7AFFF62AF3B8AC942C982020481B2E6 /* JMMaskTextField.swift */,
+				EF81BD055AD55DD780EA2AA57D63B4C2 /* JMStringMask.swift */,
+				737980D497D50F11B1F551EB6209C619 /* Support Files */,
+			);
+			name = "JMMaskTextField-Swift";
+			path = "JMMaskTextField-Swift";
+			sourceTree = "<group>";
+		};
+		10A46E57B451E0F38CC9EA7384580BBF /* Pods-TextFieldsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5F1A570F686E9C3D4EF376705C518EFB /* Pods-TextFieldsTests.modulemap */,
+				64B392386794F594ADCFC1F48F7A908D /* Pods-TextFieldsTests-acknowledgements.markdown */,
+				9F372A3233A9851D67592EE295B2E538 /* Pods-TextFieldsTests-acknowledgements.plist */,
+				E0210EC8E7DF13D2D703FBB89E49AEBA /* Pods-TextFieldsTests-dummy.m */,
+				DAD1515CD927C36DE95CA239236E2505 /* Pods-TextFieldsTests-Info.plist */,
+				70F5080EE668E50F2E03B54FF7323238 /* Pods-TextFieldsTests-umbrella.h */,
+				7B2D593F56BA6DD92054D5D378C83689 /* Pods-TextFieldsTests.debug.xcconfig */,
+				C96C58F008A08D2EB3EDF07D762D1FBC /* Pods-TextFieldsTests.release.xcconfig */,
+			);
+			name = "Pods-TextFieldsTests";
+			path = "Target Support Files/Pods-TextFieldsTests";
+			sourceTree = "<group>";
+		};
+		31763C5A1A49ED8605339EF4CE9593A4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFFD1C76A6A8DA16782994B10D4969 /* SnapKit.modulemap */,
+				287561D84D56269525627BD669C4F58A /* SnapKit-dummy.m */,
+				91C63A152F685DFD0EB32901B1AA1CFF /* SnapKit-Info.plist */,
+				415B4467E02A42C290DCD8CC4D108DE6 /* SnapKit-prefix.pch */,
+				443A33BAF950E33358D4F6C7FBAB35A2 /* SnapKit-umbrella.h */,
+				4D3051FC286C8EB533F28D8F2D38B72F /* SnapKit.debug.xcconfig */,
+				F44F6748824957C11432D5136E70BB29 /* SnapKit.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SnapKit";
+			sourceTree = "<group>";
+		};
+		3ECB9E7526A998F307865F24743BCCC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B38FF3B1D96B4076A4660D8B3F674D3F /* JMMaskTextField-Swift */,
+				6EAA644B0E5E1C7D7019308FB04C84EC /* Pods-TextFields */,
+				96C16C4E0FFE80C1C92F3AA89AB71D10 /* Pods-TextFields-TextFieldsUITests */,
+				454981182A8773A431B970D44A6990C3 /* Pods-TextFieldsTests */,
+				979486118B3E90C08386079D57962701 /* SnapKit */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B342DBCE383C9FF2241A1313B6A04D8 /* Pods-TextFields-TextFieldsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				893BC8A60D1EE8642B60C4490442C577 /* Pods-TextFields-TextFieldsUITests.modulemap */,
+				8142E6E762141576BC5ECE98B18088EF /* Pods-TextFields-TextFieldsUITests-acknowledgements.markdown */,
+				660DD693540E4345FB1B1B5B07519F6B /* Pods-TextFields-TextFieldsUITests-acknowledgements.plist */,
+				C38C822E3DB39E3FB1B238DCBE32C076 /* Pods-TextFields-TextFieldsUITests-dummy.m */,
+				6D8E4E3A979781DB31DED3E1D1AE3982 /* Pods-TextFields-TextFieldsUITests-frameworks.sh */,
+				24D0286EF59C39A3EDD358BCE2023533 /* Pods-TextFields-TextFieldsUITests-Info.plist */,
+				065C3105D5D089302DD7B6765F9461BC /* Pods-TextFields-TextFieldsUITests-umbrella.h */,
+				69A7F774308E3B86DE65CD1C48F30651 /* Pods-TextFields-TextFieldsUITests.debug.xcconfig */,
+				F433FA6BF1B781A4BC3812A312EAF220 /* Pods-TextFields-TextFieldsUITests.release.xcconfig */,
+			);
+			name = "Pods-TextFields-TextFieldsUITests";
+			path = "Target Support Files/Pods-TextFields-TextFieldsUITests";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		737980D497D50F11B1F551EB6209C619 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFC2E40FE0901DB9DE6EEFE16973E5B9 /* JMMaskTextField-Swift.modulemap */,
+				542A003D5CE501441AF379EA015F213F /* JMMaskTextField-Swift-dummy.m */,
+				31161FAE9F7DC64CB7C857EF24E38DA6 /* JMMaskTextField-Swift-Info.plist */,
+				3FC00C439BDA3CD9703924BAF4BBADB5 /* JMMaskTextField-Swift-prefix.pch */,
+				E76BF4F280BEFECE6C3229C9B3AE273A /* JMMaskTextField-Swift-umbrella.h */,
+				BA37D6263D0A4A06819338D10F69CA30 /* JMMaskTextField-Swift.debug.xcconfig */,
+				6A2EF89A4E0AAEE6EB424EA737D2F099 /* JMMaskTextField-Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JMMaskTextField-Swift";
+			sourceTree = "<group>";
+		};
+		7F109E806CFC537D8950063FE73EEDB3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C51310DD58AF751D2CD5E885EA32320 /* JMMaskTextField-Swift */,
+				E0726C959FF6BE37AD83FA169219FC3E /* SnapKit */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		965DA5530C21441B76098F784D8D874C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E03A206FC079D06484FFE89D6AD0D47D /* Pods-TextFields */,
+				4B342DBCE383C9FF2241A1313B6A04D8 /* Pods-TextFields-TextFieldsUITests */,
+				10A46E57B451E0F38CC9EA7384580BBF /* Pods-TextFieldsTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				7F109E806CFC537D8950063FE73EEDB3 /* Pods */,
+				3ECB9E7526A998F307865F24743BCCC6 /* Products */,
+				965DA5530C21441B76098F784D8D874C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E03A206FC079D06484FFE89D6AD0D47D /* Pods-TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				610C1A14519F7603808754286070B065 /* Pods-TextFields.modulemap */,
+				5F6305A6BF2C7B8E93D16487F20539E4 /* Pods-TextFields-acknowledgements.markdown */,
+				8A993D5E4FC1DB963BB06D2D192EBCF1 /* Pods-TextFields-acknowledgements.plist */,
+				4051522D4247C439AA930619021C7EB2 /* Pods-TextFields-dummy.m */,
+				3B1A2CF7E38B31615EC91E2A7B48FB6C /* Pods-TextFields-frameworks.sh */,
+				28C4AAF26838E99164691F3B51C9D933 /* Pods-TextFields-Info.plist */,
+				C84A37775643F4B1BFD9024C5A96089A /* Pods-TextFields-umbrella.h */,
+				81724D054015B940EB162275A3F9CB65 /* Pods-TextFields.debug.xcconfig */,
+				96AC3851574DBD0F7D02D28D107F0BAC /* Pods-TextFields.release.xcconfig */,
+			);
+			name = "Pods-TextFields";
+			path = "Target Support Files/Pods-TextFields";
+			sourceTree = "<group>";
+		};
+		E0726C959FF6BE37AD83FA169219FC3E /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				84DF675BF140377214EBA539C837D592 /* Constraint.swift */,
+				47359E6278C5C7747572FB0783FB8345 /* ConstraintAttributes.swift */,
+				9A783502D8ED1CAB596A6A80ED2C3F86 /* ConstraintConfig.swift */,
+				028B4F34E1908EFD233A0457206EAAE1 /* ConstraintConstantTarget.swift */,
+				EB2A95F2FA97A6A1C4BEEEB9937A15DB /* ConstraintDescription.swift */,
+				F6CD1D6995FA9D13C63E01CD856B0095 /* ConstraintDirectionalInsets.swift */,
+				659094BC2C8F8886E1B7AFB76DB63A0D /* ConstraintDirectionalInsetTarget.swift */,
+				F175422572195F3C19780C8B8231CC23 /* ConstraintDSL.swift */,
+				983E59759304B4EC5374F09F62FB688D /* ConstraintInsets.swift */,
+				24BBCAFA07020EF1EFD688CEAB267D47 /* ConstraintInsetTarget.swift */,
+				BA372ACE790D82F29B01170A45E892EF /* ConstraintItem.swift */,
+				A2D89DB8AF4E3AA2F0C5E31193BFE606 /* ConstraintLayoutGuide.swift */,
+				2266C1C7E2473D2116D6FFB962416967 /* ConstraintLayoutGuide+Extensions.swift */,
+				FC7DE144647F2CCEB88147C4437812DD /* ConstraintLayoutGuideDSL.swift */,
+				9C5128D0C1B120A233109D98976D64B7 /* ConstraintLayoutSupport.swift */,
+				C2356AE1943FCD66B0FDAB8739732310 /* ConstraintLayoutSupportDSL.swift */,
+				1D1DA6CD3E7F35376226ED5CD6C7919F /* ConstraintMaker.swift */,
+				26F097360F41CC26E7AE07629602E5EF /* ConstraintMakerEditable.swift */,
+				81F25A471169FC42FB4153088911059F /* ConstraintMakerExtendable.swift */,
+				4AA84F545180B2CC01B76AAB4031EB0E /* ConstraintMakerFinalizable.swift */,
+				650C36CA2B980DCF973D6CE35613CC3A /* ConstraintMakerPrioritizable.swift */,
+				14C1D0FEA5D6FDC5110FB63304BE929C /* ConstraintMakerRelatable.swift */,
+				C77D644F6F3371E72F54D8151E031080 /* ConstraintMakerRelatable+Extensions.swift */,
+				30DD13A793BBAA426EE8D23AB6FE6D59 /* ConstraintMultiplierTarget.swift */,
+				1CB5EB21F9F944D0F2E294CFB359D098 /* ConstraintOffsetTarget.swift */,
+				36A07848E8EDBA5FE27ECC7F5C953B1E /* ConstraintPriority.swift */,
+				96EC607BBDD0AA972D074683D6994B8A /* ConstraintPriorityTarget.swift */,
+				85B4DCEFCD609C84CBEE0DF61BC1DF80 /* ConstraintRelatableTarget.swift */,
+				C863AC608909F670D6DD0761269B7402 /* ConstraintRelation.swift */,
+				7D588D6C3D2901B104FFFF01673D4D45 /* ConstraintView.swift */,
+				6323C941CB6834633FD3012F71F555B3 /* ConstraintView+Extensions.swift */,
+				84B307A5A3105443E98F183A305D6B7B /* ConstraintViewDSL.swift */,
+				1B5EB118E81FF719B9892D8D92CB49DD /* Debugging.swift */,
+				2644BF3483FCB3680A56B6AD067C5088 /* LayoutConstraint.swift */,
+				8DDCC1340C53E16C5421AFE232A87B84 /* LayoutConstraintItem.swift */,
+				4AE4E9F67096544299A4C1EAA71C84F0 /* Typealiases.swift */,
+				D766E5A0BA58E460F85CCBA0F7067F07 /* UILayoutSupport+Extensions.swift */,
+				31763C5A1A49ED8605339EF4CE9593A4 /* Support Files */,
+			);
+			name = SnapKit;
+			path = SnapKit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		21C8D716964F8D2AB9CD50909719E033 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EB189EF655AEC27C8DFC494655F55B7 /* Pods-TextFields-TextFieldsUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5FA4790A32ECD84F2CEA55509107BD0A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3E3AB7C765C21AE17B1E6EE6560040C /* SnapKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B453A30BA30C6B7B01F1D91D9B199C7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E4ABCFBE24FC7211069EC98559FE20B /* Pods-TextFields-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845E05BE0F7F3E7462006E27F4E56E36 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDAE8ED280F796CBB0E8941EECB818DD /* Pods-TextFieldsTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBFC13C5CB6088A2C7818518DBB8F959 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6216DE80EE791E182CB1B8CBA5EFFC0 /* JMMaskTextField-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58EAA7FF29EA237538F747F2AF468203 /* Build configuration list for PBXNativeTarget "SnapKit" */;
+			buildPhases = (
+				5FA4790A32ECD84F2CEA55509107BD0A /* Headers */,
+				7B7E69B2799BABEB7764F85296B591B7 /* Sources */,
+				E8E4E7CE8309D3EF7B7476AC57986BE9 /* Frameworks */,
+				820C67429A90336F5AF1C850DF03B1B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SnapKit;
+			productName = SnapKit;
+			productReference = 979486118B3E90C08386079D57962701 /* SnapKit */;
+			productType = "com.apple.product-type.framework";
+		};
+		41AD653E57BDA8A821CF9012AAD26EF2 /* Pods-TextFields */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6752EF20C905E4C07C759EE84E20B773 /* Build configuration list for PBXNativeTarget "Pods-TextFields" */;
+			buildPhases = (
+				7B453A30BA30C6B7B01F1D91D9B199C7 /* Headers */,
+				69B1E9A5E50A57BAD0DDA333C42B51C1 /* Sources */,
+				6C8D3F7E02FBB3991C0AF6F70629A1A1 /* Frameworks */,
+				8DD9B8B84515DB469808ABEEEC5194C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D5AE82ED1BCC1BF145DB14D595847E2 /* PBXTargetDependency */,
+				9149A473945A40462AFB500F4F7DC4C7 /* PBXTargetDependency */,
+			);
+			name = "Pods-TextFields";
+			productName = Pods_TextFields;
+			productReference = 6EAA644B0E5E1C7D7019308FB04C84EC /* Pods-TextFields */;
+			productType = "com.apple.product-type.framework";
+		};
+		6AD7F58830DF3D4D32A666527D4FDF8F /* JMMaskTextField-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5C60E16EE57485FB5D31F3CEB6D731D /* Build configuration list for PBXNativeTarget "JMMaskTextField-Swift" */;
+			buildPhases = (
+				EBFC13C5CB6088A2C7818518DBB8F959 /* Headers */,
+				BDFF5DF0C912CEBA9DEE06100FF23BEF /* Sources */,
+				B0D38AC46472DAF7D29650E37DA75728 /* Frameworks */,
+				02804F4F58BC45C42AAC10836DED3D9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JMMaskTextField-Swift";
+			productName = JMMaskTextField_Swift;
+			productReference = B38FF3B1D96B4076A4660D8B3F674D3F /* JMMaskTextField-Swift */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9EC5162482A0F61AAF9E42A255695E6 /* Pods-TextFields-TextFieldsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16396D3D51ABA7865255876BD518C854 /* Build configuration list for PBXNativeTarget "Pods-TextFields-TextFieldsUITests" */;
+			buildPhases = (
+				21C8D716964F8D2AB9CD50909719E033 /* Headers */,
+				1E41E6DF3B2BDBE3C34C51BE1622CEC1 /* Sources */,
+				26820631EAE8518D0C9E716211E3CE0F /* Frameworks */,
+				6F6B710FCE9DE0E617A19DB107829966 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2CB771A476E8E65D2306E2AE3692550 /* PBXTargetDependency */,
+				D256A45558BA3A65D974D30CA54A06D5 /* PBXTargetDependency */,
+			);
+			name = "Pods-TextFields-TextFieldsUITests";
+			productName = Pods_TextFields_TextFieldsUITests;
+			productReference = 96C16C4E0FFE80C1C92F3AA89AB71D10 /* Pods-TextFields-TextFieldsUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		E3E83FE002367B386DB0E6BA91CB2A8A /* Pods-TextFieldsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E8F2B5A69BBE64DDD51393814A4473B /* Build configuration list for PBXNativeTarget "Pods-TextFieldsTests" */;
+			buildPhases = (
+				845E05BE0F7F3E7462006E27F4E56E36 /* Headers */,
+				732BE0F61302331700C1985F0EEA11E2 /* Sources */,
+				C2B9B85049FEC09FBFD00AEC9AB64021 /* Frameworks */,
+				9FEB8E8A367B12C085B1D1D6CB7AC21D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				968DC2DEA6AE975C4D8872C97AF7F1A6 /* PBXTargetDependency */,
+			);
+			name = "Pods-TextFieldsTests";
+			productName = Pods_TextFieldsTests;
+			productReference = 454981182A8773A431B970D44A6990C3 /* Pods-TextFieldsTests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 3ECB9E7526A998F307865F24743BCCC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6AD7F58830DF3D4D32A666527D4FDF8F /* JMMaskTextField-Swift */,
+				41AD653E57BDA8A821CF9012AAD26EF2 /* Pods-TextFields */,
+				B9EC5162482A0F61AAF9E42A255695E6 /* Pods-TextFields-TextFieldsUITests */,
+				E3E83FE002367B386DB0E6BA91CB2A8A /* Pods-TextFieldsTests */,
+				19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		02804F4F58BC45C42AAC10836DED3D9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F6B710FCE9DE0E617A19DB107829966 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		820C67429A90336F5AF1C850DF03B1B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DD9B8B84515DB469808ABEEEC5194C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FEB8E8A367B12C085B1D1D6CB7AC21D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E41E6DF3B2BDBE3C34C51BE1622CEC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02708F5BC787A728A6A909A3AF5CB0D3 /* Pods-TextFields-TextFieldsUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69B1E9A5E50A57BAD0DDA333C42B51C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDC00B95CEFEF51DC0F5D4E0F6FED05D /* Pods-TextFields-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		732BE0F61302331700C1985F0EEA11E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5845DFBE1D4EC429B685C307C63035 /* Pods-TextFieldsTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B7E69B2799BABEB7764F85296B591B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EAC8B6FA2D115DE708A58C601DD25E1 /* Constraint.swift in Sources */,
+				0B994CDC79B1AD3A7BE62490D27C60C8 /* ConstraintAttributes.swift in Sources */,
+				3660B4F629053ABC3C1DF69366770289 /* ConstraintConfig.swift in Sources */,
+				9C9548E8B4675954566202F7B87FF0E6 /* ConstraintConstantTarget.swift in Sources */,
+				5380454C48A12A6E376122ABD8096968 /* ConstraintDescription.swift in Sources */,
+				E98DC8FB2578E76A812E0C94BA10E1B1 /* ConstraintDirectionalInsets.swift in Sources */,
+				04637C70546B34F93C3A1D79C3F78B37 /* ConstraintDirectionalInsetTarget.swift in Sources */,
+				56AC6DC6459AE47E7BC4AF06E5B148D2 /* ConstraintDSL.swift in Sources */,
+				604D3C93C17978C23600EC415949AB64 /* ConstraintInsets.swift in Sources */,
+				9E02CFFEFE1BEC978B512286F03D31DA /* ConstraintInsetTarget.swift in Sources */,
+				69DE75BA185BBAB5FDAA28321F3C849F /* ConstraintItem.swift in Sources */,
+				611CEF7FF1EF9EA1BCEF6C73EEE3ACCF /* ConstraintLayoutGuide.swift in Sources */,
+				6AC1B881BB319C89AD023A02CDC8FC3D /* ConstraintLayoutGuide+Extensions.swift in Sources */,
+				EF21586EC3DFF6097A58EEC87376A0C1 /* ConstraintLayoutGuideDSL.swift in Sources */,
+				00A2749F46C967ED4725A32357E3FB1B /* ConstraintLayoutSupport.swift in Sources */,
+				56A72F6D13D930C4A2568F24DEA33C8D /* ConstraintLayoutSupportDSL.swift in Sources */,
+				FAB03959C2357E325B19E08BC4775DAB /* ConstraintMaker.swift in Sources */,
+				220D6AC9B1B1EC8EFFB204F9C1EAC842 /* ConstraintMakerEditable.swift in Sources */,
+				A5A8BF973BFE9C9304372A26C9F2E35B /* ConstraintMakerExtendable.swift in Sources */,
+				42B6ACFCF650183030867CB3EF345E95 /* ConstraintMakerFinalizable.swift in Sources */,
+				B43017FEC99D227D4CDD81DD2C27D9D9 /* ConstraintMakerPrioritizable.swift in Sources */,
+				183D8B3E057B885EA7DF9A8CDCCE9029 /* ConstraintMakerRelatable.swift in Sources */,
+				95E194A3AABB5407231E898B6686F73E /* ConstraintMakerRelatable+Extensions.swift in Sources */,
+				F7C0960CEEB8F0C18F4503B405EAC08F /* ConstraintMultiplierTarget.swift in Sources */,
+				A03FDA8BC5741880B1EF11AFD248EF48 /* ConstraintOffsetTarget.swift in Sources */,
+				06E43B4751069B47B3BD4AFD936A57E3 /* ConstraintPriority.swift in Sources */,
+				4DA72FD7F1FB2C0449EDEF4B8A579807 /* ConstraintPriorityTarget.swift in Sources */,
+				55E51F45F1E157D3B4942BA7252C277E /* ConstraintRelatableTarget.swift in Sources */,
+				4BAD99B7394E225CEDBF94B8100BCC7F /* ConstraintRelation.swift in Sources */,
+				B752F7C4BECB65894B1F49421049CE5F /* ConstraintView.swift in Sources */,
+				F953AA9104BFE0C2DAD639EA60104A75 /* ConstraintView+Extensions.swift in Sources */,
+				256558233B40ACA6818F143BBC5B8017 /* ConstraintViewDSL.swift in Sources */,
+				5D36B99F3CAB1FC7337082D9581FECA6 /* Debugging.swift in Sources */,
+				0591132B5EA1BE4DDA268D8A9C3D0421 /* LayoutConstraint.swift in Sources */,
+				98F570DA48370453D648BD526FDAAEAA /* LayoutConstraintItem.swift in Sources */,
+				BD47CB74CD9B2B4D2D942C9B65748DFB /* SnapKit-dummy.m in Sources */,
+				B03B5579590D528CBA6D11FF638BC2AF /* Typealiases.swift in Sources */,
+				38B9D58E94D9C1CECD7E381C64A2329D /* UILayoutSupport+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDFF5DF0C912CEBA9DEE06100FF23BEF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9918B7CC2DF1B945971FE215E4421E6 /* JMMaskTextField.swift in Sources */,
+				E36CB72E3E4EE4CE94C8639EA471C7DD /* JMMaskTextField-Swift-dummy.m in Sources */,
+				B58C15507CA715B99CB9C3B77FC35F56 /* JMStringMask.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D5AE82ED1BCC1BF145DB14D595847E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "JMMaskTextField-Swift";
+			target = 6AD7F58830DF3D4D32A666527D4FDF8F /* JMMaskTextField-Swift */;
+			targetProxy = C6D68CD87B5FBF62A2D9C17BCB855190 /* PBXContainerItemProxy */;
+		};
+		9149A473945A40462AFB500F4F7DC4C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
+			targetProxy = 8EA975C5F77D1C98F0017F2CC592F292 /* PBXContainerItemProxy */;
+		};
+		968DC2DEA6AE975C4D8872C97AF7F1A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-TextFields";
+			target = 41AD653E57BDA8A821CF9012AAD26EF2 /* Pods-TextFields */;
+			targetProxy = 521006AB25030359E21427CD4D9756D8 /* PBXContainerItemProxy */;
+		};
+		D256A45558BA3A65D974D30CA54A06D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
+			targetProxy = AFD7E2642B21E7DCE4CF0763FF080E35 /* PBXContainerItemProxy */;
+		};
+		D2CB771A476E8E65D2306E2AE3692550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "JMMaskTextField-Swift";
+			target = 6AD7F58830DF3D4D32A666527D4FDF8F /* JMMaskTextField-Swift */;
+			targetProxy = E888FC989F0C3EEB0FAF735B8FD72AD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0B49CDB1DCB3358CFBD3BC63825340EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA37D6263D0A4A06819338D10F69CA30 /* JMMaskTextField-Swift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JMMaskTextField-Swift/JMMaskTextField-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JMMaskTextField-Swift/JMMaskTextField-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JMMaskTextField-Swift/JMMaskTextField-Swift.modulemap";
+				PRODUCT_MODULE_NAME = JMMaskTextField_Swift;
+				PRODUCT_NAME = JMMaskTextField_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		239ECD94B0E56529B23319A02796F86E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81724D054015B940EB162275A3F9CB65 /* Pods-TextFields.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFields/Pods-TextFields-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFields/Pods-TextFields.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		60F645CE4CCEAA0665B9C22EB0696CAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96AC3851574DBD0F7D02D28D107F0BAC /* Pods-TextFields.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFields/Pods-TextFields-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFields/Pods-TextFields.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8C925430B65BE03F92ABCD1B2005EE0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F44F6748824957C11432D5136E70BB29 /* SnapKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				PRODUCT_MODULE_NAME = SnapKit;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		950D5AEC270DC7A842BBB85299B32BF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B2D593F56BA6DD92054D5D378C83689 /* Pods-TextFieldsTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldsTests/Pods-TextFieldsTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldsTests/Pods-TextFieldsTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A6F0173BAEB974532D93E05E5A94E50A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D3051FC286C8EB533F28D8F2D38B72F /* SnapKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				PRODUCT_MODULE_NAME = SnapKit;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE48FB79ACC7D6FCBF5695D2BFBA04D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C96C58F008A08D2EB3EDF07D762D1FBC /* Pods-TextFieldsTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFieldsTests/Pods-TextFieldsTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFieldsTests/Pods-TextFieldsTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3C08DAB0D6E6AB7424D947ABBBE72F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A2EF89A4E0AAEE6EB424EA737D2F099 /* JMMaskTextField-Swift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JMMaskTextField-Swift/JMMaskTextField-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JMMaskTextField-Swift/JMMaskTextField-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JMMaskTextField-Swift/JMMaskTextField-Swift.modulemap";
+				PRODUCT_MODULE_NAME = JMMaskTextField_Swift;
+				PRODUCT_NAME = JMMaskTextField_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EBE00F9A6F01766E52977F09654D2E92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69A7F774308E3B86DE65CD1C48F30651 /* Pods-TextFields-TextFieldsUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFields-TextFieldsUITests/Pods-TextFields-TextFieldsUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFields-TextFieldsUITests/Pods-TextFields-TextFieldsUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F44CB6648E998B451CD975BDEF01E77F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F433FA6BF1B781A4BC3812A312EAF220 /* Pods-TextFields-TextFieldsUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TextFields-TextFieldsUITests/Pods-TextFields-TextFieldsUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TextFields-TextFieldsUITests/Pods-TextFields-TextFieldsUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16396D3D51ABA7865255876BD518C854 /* Build configuration list for PBXNativeTarget "Pods-TextFields-TextFieldsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBE00F9A6F01766E52977F09654D2E92 /* Debug */,
+				F44CB6648E998B451CD975BDEF01E77F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58EAA7FF29EA237538F747F2AF468203 /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6F0173BAEB974532D93E05E5A94E50A /* Debug */,
+				8C925430B65BE03F92ABCD1B2005EE0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6752EF20C905E4C07C759EE84E20B773 /* Build configuration list for PBXNativeTarget "Pods-TextFields" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				239ECD94B0E56529B23319A02796F86E /* Debug */,
+				60F645CE4CCEAA0665B9C22EB0696CAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E8F2B5A69BBE64DDD51393814A4473B /* Build configuration list for PBXNativeTarget "Pods-TextFieldsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				950D5AEC270DC7A842BBB85299B32BF2 /* Debug */,
+				AE48FB79ACC7D6FCBF5695D2BFBA04D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5C60E16EE57485FB5D31F3CEB6D731D /* Build configuration list for PBXNativeTarget "JMMaskTextField-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B49CDB1DCB3358CFBD3BC63825340EF /* Debug */,
+				B3C08DAB0D6E6AB7424D947ABBBE72F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
