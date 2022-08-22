@@ -10,10 +10,11 @@ import JMMaskTextField_Swift
 import SafariServices
 
 class MainViewController: UIViewController {
-    
+    //MARK: Timer
     weak private var timer: Timer?
-    
     //MARK: UIElements
+    private let scrollView = UIScrollView()
+    private let contentView = UIView()
     private let topSafeAreaView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -142,6 +143,12 @@ class MainViewController: UIViewController {
         textfield.isSecureTextEntry = true
         return textfield
     }()
+    private let passwordStrength: UIProgressView = {
+        let view = UIProgressView()
+        view.progressViewStyle = .default
+        view.trackTintColor = .white
+        return view
+    }()
     private let minLengthRule: UILabel = {
         let label = UILabel()
         label.text = Constants.RulesLabel.minLengthRule
@@ -175,32 +182,57 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         defaultConfiguration()
+        observeKeyboardNotificaton()
+        addTapGesture()
     }
     //MARK: Methods
+    private func addTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(gesture:)))
+        contentView.addGestureRecognizer(tap)
+    }
+    
     private func setupUI() {
-        // Top Safe Area
+        // Top safe area
         view.addSubview(topSafeAreaView)
         topSafeAreaView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.TopSafeArea.side)
             make.top.equalToSuperview().inset(Constants.OffSet.TopSafeArea.top)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.top)
         }
-        // Header View
-        view.addSubview(header)
-        header.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.side)
-            make.top.equalTo(topSafeAreaView.snp.bottom).offset(Constants.OffSet.Header.top)
+        // Scroll view
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { make in
+            make.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(topSafeAreaView.snp.bottom)
+            make.bottomMargin.equalToSuperview()
         }
-        // First label
-        view.addSubview(nodigitsTitle)
+        // Content view
+        scrollView.addSubview(contentView)
+        contentView.snp.makeConstraints { make in
+            make.height.equalTo(scrollView.snp.height)
+            make.width.equalTo(scrollView.snp.width)
+            make.leading.equalTo(scrollView.snp.leading)
+            make.trailing.equalTo(scrollView.snp.trailing)
+            make.top.equalTo(scrollView.snp.top)
+            make.bottom.equalTo(scrollView.snp.bottom)
+        }
+        // Header view
+        contentView.addSubview(header)
+        header.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.top.equalTo(contentView.snp.top).offset(Constants.OffSet.Header.top)
+        }
+        // No digits label
+        contentView.addSubview(nodigitsTitle)
         nodigitsTitle.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.side)
             make.top.equalTo(header.snp.bottom).offset(Constants.OffSet.labelTop)
         }
         //Nodigits textfield
-        view.addSubview(nodigitsView)
+        contentView.addSubview(nodigitsView)
         nodigitsView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(nodigitsTitle.snp.bottom).offset(Constants.OffSet.textfieldViewTop)
             make.height.equalTo(Constants.OffSet.textfieldViewHeight)
         }
@@ -209,22 +241,22 @@ class MainViewController: UIViewController {
             make.leading.trailing.equalTo(nodigitsView.safeAreaLayoutGuide).inset(Constants.OffSet.inputLeading)
             make.top.equalTo(nodigitsView.snp.top).offset(Constants.OffSet.inputTop)
         }
-        //Second label
-        view.addSubview(inputLimitTitle)
+        //Input label
+        contentView.addSubview(inputLimitTitle)
         inputLimitTitle.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.side)
             make.top.equalTo(nodigitsView.snp.bottom).offset(Constants.OffSet.labelTop)
         }
         //Limit label
-        view.addSubview(limitLabel)
+        contentView.addSubview(limitLabel)
         limitLabel.snp.makeConstraints { make in
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(nodigitsView.snp.bottom).offset(Constants.OffSet.labelTop)
         }
         //Input limit
-        view.addSubview(limitView)
+        contentView.addSubview(limitView)
         limitView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(inputLimitTitle.snp.bottom).offset(Constants.OffSet.textfieldViewTop)
             make.height.equalTo(Constants.OffSet.textfieldViewHeight)
         }
@@ -233,16 +265,16 @@ class MainViewController: UIViewController {
             make.leading.trailing.equalTo(limitView.safeAreaLayoutGuide).inset(Constants.OffSet.inputLeading)
             make.top.equalTo(limitView.snp.top).offset(Constants.OffSet.inputTop)
         }
-        //Third label
-        view.addSubview(onlyCharTitle)
+        //Only characters label
+        contentView.addSubview(onlyCharTitle)
         onlyCharTitle.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.side)
             make.top.equalTo(limitView.snp.bottom).offset(Constants.OffSet.labelTop)
         }
         //Only characters input
-        view.addSubview(onlyCharView)
+        contentView.addSubview(onlyCharView)
         onlyCharView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(onlyCharTitle.snp.bottom).offset(Constants.OffSet.textfieldViewTop)
             make.height.equalTo(Constants.OffSet.textfieldViewHeight)
         }
@@ -251,16 +283,16 @@ class MainViewController: UIViewController {
             make.leading.trailing.equalTo(onlyCharView.safeAreaLayoutGuide).inset(Constants.OffSet.inputLeading)
             make.top.equalTo(onlyCharView.snp.top).offset(Constants.OffSet.inputTop)
         }
-        //Fourth label
-        view.addSubview(linkTitle)
+        //Link label
+        contentView.addSubview(linkTitle)
         linkTitle.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.side)
             make.top.equalTo(onlyCharView.snp.bottom).offset(Constants.OffSet.labelTop)
         }
         //Link input
-        view.addSubview(linkView)
+        contentView.addSubview(linkView)
         linkView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(linkTitle.snp.bottom).offset(Constants.OffSet.textfieldViewTop)
             make.height.equalTo(Constants.OffSet.textfieldViewHeight)
         }
@@ -270,15 +302,15 @@ class MainViewController: UIViewController {
             make.top.equalTo(linkView.snp.top).offset(Constants.OffSet.inputTop)
         }
         //Validation label
-        view.addSubview(validationTitle)
+        contentView.addSubview(validationTitle)
         validationTitle.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.side)
             make.top.equalTo(linkView.snp.bottom).offset(Constants.OffSet.labelTop)
         }
         //Password input
-        view.addSubview(passwordView)
+        contentView.addSubview(passwordView)
         passwordView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(validationTitle.snp.bottom).offset(Constants.OffSet.textfieldViewTop)
             make.height.equalTo(Constants.OffSet.textfieldViewHeight)
         }
@@ -287,30 +319,38 @@ class MainViewController: UIViewController {
             make.leading.trailing.equalTo(passwordView.safeAreaLayoutGuide).inset(Constants.OffSet.inputLeading)
             make.top.equalTo(passwordView.snp.top).offset(Constants.OffSet.inputTop)
         }
-        //Rules label
-        view.addSubview(minLengthRule)
-        minLengthRule.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
-            make.top.equalTo(passwordView.snp.bottom).offset(Constants.OffSet.RulesLabel.top)
+        //Password strength checker
+        contentView.addSubview(passwordStrength)
+        passwordStrength.snp.makeConstraints { make in
+            make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
+            make.top.equalTo(passwordView.snp.bottom).offset(3)
+            make.height.equalTo(4)
         }
-        view.addSubview(minDigitRule)
+        //Rules labels
+        contentView.addSubview(minLengthRule)
+        minLengthRule.snp.makeConstraints { make in
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
+            make.top.equalTo(passwordStrength.snp.bottom).offset(Constants.OffSet.RulesLabel.top)
+        }
+        contentView.addSubview(minDigitRule)
         minDigitRule.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
             make.top.equalTo(minLengthRule.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
         }
-        view.addSubview(minLowercaseRule)
+        contentView.addSubview(minLowercaseRule)
         minLowercaseRule.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
             make.top.equalTo(minDigitRule.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
         }
-        view.addSubview(minUppercaseRule)
+        contentView.addSubview(minUppercaseRule)
         minUppercaseRule.snp.makeConstraints { make in
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
+            make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
             make.top.equalTo(minLowercaseRule.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
         }
     }
     
     private func defaultConfiguration() {
+        contentView.backgroundColor = .white
         view.backgroundColor = .white
         nodigitsInput.delegate = self
         limitInput.delegate = self
@@ -319,17 +359,52 @@ class MainViewController: UIViewController {
         passwordInput.delegate = self
     }
     
-    private func verifyUrl (urlString: String?) -> Bool {
-        if let urlString = urlString {
-            if let url = NSURL(string: urlString) {
-                return UIApplication.shared.canOpenURL(url as URL)
-            }
+    private func observeKeyboardNotificaton() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func verifyUrl (string: String) -> Bool {
+        let types: NSTextCheckingResult.CheckingType = [.link]
+        let detector = try? NSDataDetector(types: types.rawValue)
+        guard (detector != nil && string.count > 0) else { return false }
+        if detector!.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, string.count)) > 0 {
+            return true
         }
         return false
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
+    private func search(url: String) {
+        var string = url
+        if !string.contains(Constants.LinkInput.thing) {
+            string = Constants.LinkInput.linkProtocol + string
+        }
+        timer = .scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
+            if let url = URL(string: string) {
+                let config = SFSafariViewController.Configuration()
+                config.entersReaderIfAvailable = true
+                let vc = SFSafariViewController(url: url, configuration: config)
+                self?.present(vc, animated: true)
+            }
+        }
+    }
+    
+    @objc private func keyboardWillShow(sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { return }
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc private func keyboardWillHide(sender: NSNotification) {
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc private func handleTap(gesture: UITapGestureRecognizer) {
         view.endEditing(true)
     }
 }
@@ -374,53 +449,43 @@ extension MainViewController: UITextFieldDelegate {
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
+        contentView.endEditing(true)
         if textField == linkInput {
-            let isUrl = verifyUrl(urlString: textField.text)
+            let isUrl = verifyUrl(string: textField.text ?? "")
             if isUrl {
-                if let url = URL(string: textField.text ?? "") {
-                    let config = SFSafariViewController.Configuration()
-                    config.entersReaderIfAvailable = true
-                    let vc = SFSafariViewController(url: url, configuration: config)
-                    present(vc, animated: true)
-                }
-            } else {
-                return false
+                search(url: textField.text ?? "")
             }
+        } else {
+            return false
         }
         return true
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
         switch textField {
         case nodigitsInput:
             let allowedCharacters = CharacterSet.decimalDigits.inverted
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
         case limitInput:
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
             let lngthToAdd = updatedText.count
+            limitLabel.text = "\(Constants.InputLimit.charLimit - lngthToAdd)/10"
             if lngthToAdd <= Constants.InputLimit.charLimit {
-                limitLabel.text = "\(lngthToAdd)/10"
                 limitLabel.textColor = Constants.titleTextColor
+                limitView.layer.borderColor = Constants.inputBorderColor
             } else {
                 limitLabel.textColor = .red
-                limitLabel.text = Constants.LimitLabel.fullText
+                limitView.layer.borderColor = UIColor.red.cgColor
             }
-            return updatedText.count <= Constants.InputLimit.charLimit
+            
         case linkInput:
             timer?.invalidate()
-            let isUrl = verifyUrl(urlString: textField.text)
+            let isUrl = verifyUrl(string: textField.text ?? "")
             if isUrl {
-                timer = .scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
-                    if let url = URL(string: textField.text ?? "") {
-                        let config = SFSafariViewController.Configuration()
-                        config.entersReaderIfAvailable = true
-                        let vc = SFSafariViewController(url: url, configuration: config)
-                        self?.present(vc, animated: true)
-                    }
-                }
+                search(url: textField.text ?? "")
             } else {
                 break
             }
@@ -429,23 +494,26 @@ extension MainViewController: UITextFieldDelegate {
             minDigitRule.textColor = Constants.titleTextColor
             minLowercaseRule.textColor = Constants.titleTextColor
             minUppercaseRule.textColor = Constants.titleTextColor
-            let currentText = textField.text ?? ""
-            guard let stringRange = Range(range, in: currentText) else { return false }
-            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-            let decimalRange = updatedText.rangeOfCharacter(from: CharacterSet.decimalDigits)
-            let lowercaseRange = updatedText.rangeOfCharacter(from: CharacterSet.lowercaseLetters)
-            let uppercaseRange = updatedText.rangeOfCharacter(from: CharacterSet.uppercaseLetters)
-            if updatedText.count >= Constants.PasswordRules.minLength {
-                minLengthRule.textColor = .green
-            }
-            if decimalRange != nil {
-                minDigitRule.textColor = .green
-            }
-            if lowercaseRange != nil {
-                minLowercaseRule.textColor = .green
-            }
-            if uppercaseRange != nil {
-                minUppercaseRule.textColor = .green
+            if !updatedText.isEmpty {
+                let validationId = PasswordStrengthManager.checkValidation(password: updatedText, rules: PasswordRules.passwordRule, minLength: PasswordRules.minPasswordLength)
+                let progressInfo = PasswordStrengthManager.setProgressView(strength: validationId.strength)
+                passwordStrength.setProgress(progressInfo.percentage, animated: false)
+                passwordStrength.progressTintColor = progressInfo.color
+                if updatedText.rangeOfCharacter(from: CharacterSet.lowercaseLetters) != nil {
+                    minLowercaseRule.textColor = .green
+                }
+                if updatedText.rangeOfCharacter(from: CharacterSet.uppercaseLetters) != nil {
+                    minUppercaseRule.textColor = .green
+                }
+                if updatedText.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
+                    minDigitRule.textColor = .green
+                }
+                
+                if updatedText.count >= Constants.PasswordRules.minLength {
+                    minLengthRule.textColor = .green
+                }
+            } else  {
+                passwordStrength.setProgress(0, animated: false)
             }
         default:
             break
@@ -481,8 +549,7 @@ extension MainViewController {
             static let text = "Input limit"
         }
         enum LimitLabel {
-            static let emptyText = "0/10"
-            static let fullText = "10/10"
+            static let emptyText = "10/10"
         }
         enum InputLimit {
             static let placeholder =  NSAttributedString(
@@ -506,6 +573,8 @@ extension MainViewController {
             static let placeholder =  NSAttributedString(
                 string: "www.example.com",
                 attributes: [NSAttributedString.Key.foregroundColor: UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6), NSAttributedString.Key.font: UIFont(name: "Rubik-Regular", size: 17) ?? UIFont.systemFont(ofSize: 17)])
+            static let thing = "://"
+            static let linkProtocol = "https://"
         }
         enum ValidationTitle {
             static let text = "Validation rules"
@@ -542,11 +611,6 @@ extension MainViewController {
                 static let side: CGFloat = 24
                 static let top: CGFloat = 8
                 static let spacing: CGFloat = 5
-                static let bottom: CGFloat = {
-                    let window = UIApplication.shared.windows.first
-                    let bottomPadding = window?.safeAreaInsets.bottom ?? 0
-                    return bottomPadding + 90
-                }()
             }
         }
     }

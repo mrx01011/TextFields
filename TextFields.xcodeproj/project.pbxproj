@@ -20,7 +20,10 @@
 		FB94D194289D386E00C36E4D /* TextFieldsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D193289D386E00C36E4D /* TextFieldsUITestsLaunchTests.swift */; };
 		FB94D1A2289D3BE900C36E4D /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB94D1A1289D3BE900C36E4D /* Rubik-Regular.ttf */; };
 		FB94D1A4289D3BFA00C36E4D /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB94D1A3289D3BFA00C36E4D /* Rubik-Medium.ttf */; };
+		FB94D1A628AEAF1E00C36E4D /* PasswordRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1A528AEAF1E00C36E4D /* PasswordRules.swift */; };
+		FB94D1A828AEB02200C36E4D /* PasswordStrengthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1A728AEB02200C36E4D /* PasswordStrengthType.swift */; };
 		FBADCBF879461ADCCAB2AFE7 /* Pods_TextFields.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A6BB806500A3F2FF9AA6E8 /* Pods_TextFields.framework */; };
+		FBB018C828AEB33A00B5DED0 /* PasswordStrengthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB018C728AEB33A00B5DED0 /* PasswordStrengthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		FB94D193289D386E00C36E4D /* TextFieldsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FB94D1A1289D3BE900C36E4D /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		FB94D1A3289D3BFA00C36E4D /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		FB94D1A528AEAF1E00C36E4D /* PasswordRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRules.swift; sourceTree = "<group>"; };
+		FB94D1A728AEB02200C36E4D /* PasswordStrengthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthType.swift; sourceTree = "<group>"; };
+		FBB018C728AEB33A00B5DED0 /* PasswordStrengthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +111,6 @@
 				7FB8D23773DD4F82C8209228 /* Pods-TextFieldsTests.debug.xcconfig */,
 				4B0EEBE9CA25B357132A857A /* Pods-TextFieldsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -148,6 +153,7 @@
 				FB94D170289D386700C36E4D /* AppDelegate.swift */,
 				FB94D172289D386700C36E4D /* SceneDelegate.swift */,
 				FB94D174289D386700C36E4D /* MainViewController.swift */,
+				FBB018C628AEB2FF00B5DED0 /* PasswordStrength */,
 				FB94D176289D386700C36E4D /* Main.storyboard */,
 				FB94D179289D386D00C36E4D /* Assets.xcassets */,
 				FB94D17B289D386D00C36E4D /* LaunchScreen.storyboard */,
@@ -180,6 +186,16 @@
 				FB94D1A3289D3BFA00C36E4D /* Rubik-Medium.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FBB018C628AEB2FF00B5DED0 /* PasswordStrength */ = {
+			isa = PBXGroup;
+			children = (
+				FB94D1A528AEAF1E00C36E4D /* PasswordRules.swift */,
+				FB94D1A728AEB02200C36E4D /* PasswordStrengthType.swift */,
+				FBB018C728AEB33A00B5DED0 /* PasswordStrengthManager.swift */,
+			);
+			path = PasswordStrength;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,7 +439,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB94D1A828AEB02200C36E4D /* PasswordStrengthType.swift in Sources */,
+				FB94D1A628AEAF1E00C36E4D /* PasswordRules.swift in Sources */,
 				FB94D175289D386700C36E4D /* MainViewController.swift in Sources */,
+				FBB018C828AEB33A00B5DED0 /* PasswordStrengthManager.swift in Sources */,
 				FB94D171289D386700C36E4D /* AppDelegate.swift in Sources */,
 				FB94D173289D386700C36E4D /* SceneDelegate.swift in Sources */,
 			);
