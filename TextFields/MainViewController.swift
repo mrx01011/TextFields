@@ -364,37 +364,41 @@ final class MainViewController: UIViewController {
     private func observeKeyboardNotificaton() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(sender:)),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillHide(sender:)),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
     }
     
-    private func tryOpen(url: String) {
+    private func tryOpen(urlFromString string: String) {
         let types: NSTextCheckingResult.CheckingType = [.link]
         let detector = try? NSDataDetector(types: types.rawValue)
         guard let strongDetector = detector,
-              url.count > 0 else { return }
-        if strongDetector.numberOfMatches(in: url,
-                                          options: NSRegularExpression.MatchingOptions(rawValue: 0),
-                                          range: NSMakeRange(0, url.count)) > 0 {
-            var string = url
-            if !string.contains(Constants.LinkInput.thing) {
-                string = Constants.LinkInput.linkProtocol + string
-            }
-            timer?.invalidate()
-            timer = .scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
-                if let url = URL(string: string) {
-                    let config = SFSafariViewController.Configuration()
-                    config.entersReaderIfAvailable = true
-                    let vc = SFSafariViewController(url: url, configuration: config)
-                    self?.present(vc, animated: true)
-                }
+              !string.isEmpty,
+              strongDetector.numberOfMatches(
+                in: string,
+                options: NSRegularExpression.MatchingOptions(rawValue: 0),
+                range: NSMakeRange(0, string.count)
+              ) > 0 else { return }
+        
+        var protocoledString = string
+        if !protocoledString.contains(Constants.LinkInput.thing) {
+            protocoledString = Constants.LinkInput.linkProtocol + protocoledString
+        }
+        timer?.invalidate()
+        timer = .scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
+            if let url = URL(string: protocoledString) {
+                let config = SFSafariViewController.Configuration()
+                config.entersReaderIfAvailable = true
+                let vc = SFSafariViewController(url: url, configuration: config)
+                self?.present(vc, animated: true)
             }
         }
     }
     
-    func getProgress(strength: StrengthType) -> ProgressViewInformation {
+    private func getProgressInfo(fromStrength strength: StrengthType) -> ProgressViewInformation {
         var color: UIColor
         var percentage: Float
         switch strength {
@@ -412,24 +416,6 @@ final class MainViewController: UIViewController {
             color = strength.color
         }
         return ProgressViewInformation(color: color, percentage: percentage)
-    }
-    
-    @objc private func keyboardWillShow(sender: NSNotification) {
-        guard let userInfo = sender.userInfo else { return }
-        guard var keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height
-        scrollView.contentInset = contentInset
-    }
-    
-    @objc private func keyboardWillHide(sender: NSNotification) {
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInset
-    }
-    
-    @objc private func hideKeyboard(gesture: UITapGestureRecognizer) {
-        view.endEditing(true)
     }
 }
 //MARK: Textfield Delegate
@@ -451,6 +437,7 @@ extension MainViewController: UITextFieldDelegate {
             break
         }
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
         case nodigitsInput:
@@ -472,13 +459,15 @@ extension MainViewController: UITextFieldDelegate {
             break
         }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         contentView.endEditing(true)
         if textField == linkInput {
-            tryOpen(url: textField.text ?? "")
+            tryOpen(urlFromString: textField.text ?? "")
         }
         return true
     }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
@@ -489,6 +478,7 @@ extension MainViewController: UITextFieldDelegate {
             let allowedCharacters = CharacterSet.decimalDigits.inverted
             let characterSet = CharacterSet(charactersIn: string)
             return allowedCharacters.isSuperset(of: characterSet)
+            
         case limitInput:
             let lngthToAdd = updatedText.count
             limitLabel.text = "\(Constants.InputLimit.charLimit - lngthToAdd)/10"
@@ -499,15 +489,17 @@ extension MainViewController: UITextFieldDelegate {
                 limitLabel.textColor = .red
                 limitView.layer.borderColor = UIColor.red.cgColor
             }
+            
         case linkInput:
-            tryOpen(url: textField.text ?? "")
+            tryOpen(urlFromString: textField.text ?? "")
+            
         case passwordInput:
             minLengthRuleLabel.textColor = Constants.titleTextColor
             minDigitRuleLabel.textColor = Constants.titleTextColor
             minLowercaseRuleLabel.textColor = Constants.titleTextColor
             minUppercaseRuleLabel.textColor = Constants.titleTextColor
             if !updatedText.isEmpty {
-                let implementedRules = passwordStrengthManager.getValidationRules(password: updatedText)
+                let implementedRules = passwordStrengthManager.getFulfilledRules(from: updatedText)
                 implementedRules.forEach { rule in
                     switch rule {
                     case .lowerCase:
@@ -520,8 +512,8 @@ extension MainViewController: UITextFieldDelegate {
                         minLengthRuleLabel.textColor = .green
                     }
                 }
-                let strength = passwordStrengthManager.strength
-                let progressInfo = getProgress(strength: strength)
+                let strength = passwordStrengthManager.getPasswordStrength(containingRules: implementedRules)
+                let progressInfo = getProgressInfo(fromStrength: strength)
                 passwordStrengthProgressView.setProgress(progressInfo.percentage, animated: false)
                 passwordStrengthProgressView.progressTintColor = progressInfo.color
             } else  {
@@ -531,6 +523,26 @@ extension MainViewController: UITextFieldDelegate {
             break
         }
         return true
+    }
+}
+//MARK: Keyboard
+extension MainViewController {
+    @objc private func keyboardWillShow(sender: NSNotification) {
+        guard let userInfo = sender.userInfo else { return }
+        guard var keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc private func keyboardWillHide(sender: NSNotification) {
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
+    
+    @objc private func hideKeyboard(gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 }
 //MARK: Constants

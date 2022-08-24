@@ -8,35 +8,33 @@
 import UIKit
 
 class PasswordStrengthManager {
-    var strength: StrengthType = .weak
     
-    func getValidationRules(password: String) -> Set<ValidationRequiredRule> {
-        let rules = PasswordRules.passwordRule
+    func getFulfilledRules(from password: String) -> Set<ValidationRequiredRule> {
         let minLength = PasswordRules.minPasswordLength
-        var validationCompletion: Set<ValidationRequiredRule> = []
+        var validationRules = Set<ValidationRequiredRule>()
         
         if password.rangeOfCharacter(from: CharacterSet.lowercaseLetters) != nil {
-            validationCompletion.insert(.lowerCase)
+            validationRules.insert(.lowerCase)
         }
         if password.rangeOfCharacter(from: CharacterSet.uppercaseLetters) != nil {
-            validationCompletion.insert(.uppercase)
+            validationRules.insert(.uppercase)
         }
         if password.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
-            validationCompletion.insert(.digit)
+            validationRules.insert(.digit)
         }
         if password.count >= minLength {
-            validationCompletion.insert(.minLength)
+            validationRules.insert(.minLength)
         }
-        strength = strengthCheck(requiredRule: rules, containingRule: validationCompletion)
         
-        return validationCompletion
+        return validationRules
     }
-    func strengthCheck(requiredRule: Set<ValidationRequiredRule>, containingRule: Set<ValidationRequiredRule>) -> StrengthType {
-        if containingRule.count == requiredRule.count - 2 {
+    
+    func getPasswordStrength(requiredRules: Set<ValidationRequiredRule> = PasswordRules.passwordRule, containingRules: Set<ValidationRequiredRule>) -> StrengthType {
+        if containingRules.count == requiredRules.count - 2 {
             return .medium
-        } else if containingRule.count == requiredRule.count - 1 {
+        } else if containingRules.count == requiredRules.count - 1 {
             return .strong
-        } else if containingRule.count == requiredRule.count {
+        } else if containingRules.count == requiredRules.count {
             return .veryStrong
         } else {
             return .weak
