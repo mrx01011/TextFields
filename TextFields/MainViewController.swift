@@ -9,9 +9,10 @@ import UIKit
 import JMMaskTextField_Swift
 import SafariServices
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     //MARK: Timer
     weak private var timer: Timer?
+    private let passwordStrengthManager = PasswordStrengthManager()
     //MARK: UIElements
     private let scrollView = UIScrollView()
     private let contentView = UIView()
@@ -20,7 +21,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = .white
         return view
     }()
-    private let header: UILabel = {
+    private let headerLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.Header.text
         label.font = Constants.Header.font
@@ -143,34 +144,34 @@ class MainViewController: UIViewController {
         textfield.isSecureTextEntry = true
         return textfield
     }()
-    private let passwordStrength: UIProgressView = {
+    private let passwordStrengthProgressView: UIProgressView = {
         let view = UIProgressView()
         view.progressViewStyle = .default
         view.trackTintColor = .white
         return view
     }()
-    private let minLengthRule: UILabel = {
+    private let minLengthRuleLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.RulesLabel.minLengthRule
         label.font = Constants.titleFont
         label.textColor = Constants.titleTextColor
         return label
     }()
-    private let minDigitRule: UILabel = {
+    private let minDigitRuleLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.RulesLabel.minDigitRule
         label.font = Constants.titleFont
         label.textColor = Constants.titleTextColor
         return label
     }()
-    private let minLowercaseRule: UILabel = {
+    private let minLowercaseRuleLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.RulesLabel.minLowercaseRule
         label.font = Constants.titleFont
         label.textColor = Constants.titleTextColor
         return label
     }()
-    private let minUppercaseRule: UILabel = {
+    private let minUppercaseRuleLabel: UILabel = {
         let label = UILabel()
         label.text = Constants.RulesLabel.minUppercaseRule
         label.font = Constants.titleFont
@@ -183,11 +184,12 @@ class MainViewController: UIViewController {
         setupUI()
         defaultConfiguration()
         observeKeyboardNotificaton()
-        addTapGesture()
+        addTapToHideKeyboard()
     }
     //MARK: Methods
-    private func addTapGesture() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(gesture:)))
+    private func addTapToHideKeyboard() {
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(hideKeyboard(gesture:)))
         contentView.addGestureRecognizer(tap)
     }
     
@@ -218,8 +220,8 @@ class MainViewController: UIViewController {
             make.bottom.equalTo(scrollView.snp.bottom)
         }
         // Header view
-        contentView.addSubview(header)
-        header.snp.makeConstraints { make in
+        contentView.addSubview(headerLabel)
+        headerLabel.snp.makeConstraints { make in
             make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(contentView.snp.top).offset(Constants.OffSet.Header.top)
         }
@@ -227,7 +229,7 @@ class MainViewController: UIViewController {
         contentView.addSubview(nodigitsTitle)
         nodigitsTitle.snp.makeConstraints { make in
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.side)
-            make.top.equalTo(header.snp.bottom).offset(Constants.OffSet.labelTop)
+            make.top.equalTo(headerLabel.snp.bottom).offset(Constants.OffSet.labelTop)
         }
         //Nodigits textfield
         contentView.addSubview(nodigitsView)
@@ -320,32 +322,32 @@ class MainViewController: UIViewController {
             make.top.equalTo(passwordView.snp.top).offset(Constants.OffSet.inputTop)
         }
         //Password strength checker
-        contentView.addSubview(passwordStrength)
-        passwordStrength.snp.makeConstraints { make in
+        contentView.addSubview(passwordStrengthProgressView)
+        passwordStrengthProgressView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(contentView.safeAreaLayoutGuide).inset(Constants.OffSet.side)
             make.top.equalTo(passwordView.snp.bottom).offset(3)
             make.height.equalTo(4)
         }
         //Rules labels
-        contentView.addSubview(minLengthRule)
-        minLengthRule.snp.makeConstraints { make in
+        contentView.addSubview(minLengthRuleLabel)
+        minLengthRuleLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
-            make.top.equalTo(passwordStrength.snp.bottom).offset(Constants.OffSet.RulesLabel.top)
+            make.top.equalTo(passwordStrengthProgressView.snp.bottom).offset(Constants.OffSet.RulesLabel.top)
         }
-        contentView.addSubview(minDigitRule)
-        minDigitRule.snp.makeConstraints { make in
+        contentView.addSubview(minDigitRuleLabel)
+        minDigitRuleLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
-            make.top.equalTo(minLengthRule.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
+            make.top.equalTo(minLengthRuleLabel.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
         }
-        contentView.addSubview(minLowercaseRule)
-        minLowercaseRule.snp.makeConstraints { make in
+        contentView.addSubview(minLowercaseRuleLabel)
+        minLowercaseRuleLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
-            make.top.equalTo(minDigitRule.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
+            make.top.equalTo(minDigitRuleLabel.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
         }
-        contentView.addSubview(minUppercaseRule)
-        minUppercaseRule.snp.makeConstraints { make in
+        contentView.addSubview(minUppercaseRuleLabel)
+        minUppercaseRuleLabel.snp.makeConstraints { make in
             make.leading.equalTo(contentView.safeAreaLayoutGuide).offset(Constants.OffSet.RulesLabel.side)
-            make.top.equalTo(minLowercaseRule.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
+            make.top.equalTo(minLowercaseRuleLabel.snp.bottom).offset(Constants.OffSet.RulesLabel.spacing)
         }
     }
     
@@ -360,40 +362,62 @@ class MainViewController: UIViewController {
     }
     
     private func observeKeyboardNotificaton() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(sender:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide(sender:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    private func verifyUrl (string: String) -> Bool {
+    private func tryOpen(url: String) {
         let types: NSTextCheckingResult.CheckingType = [.link]
         let detector = try? NSDataDetector(types: types.rawValue)
-        guard (detector != nil && string.count > 0) else { return false }
-        if detector!.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, string.count)) > 0 {
-            return true
-        }
-        return false
-    }
-    
-    private func search(url: String) {
-        var string = url
-        if !string.contains(Constants.LinkInput.thing) {
-            string = Constants.LinkInput.linkProtocol + string
-        }
-        timer = .scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
-            if let url = URL(string: string) {
-                let config = SFSafariViewController.Configuration()
-                config.entersReaderIfAvailable = true
-                let vc = SFSafariViewController(url: url, configuration: config)
-                self?.present(vc, animated: true)
+        guard let strongDetector = detector,
+              url.count > 0 else { return }
+        if strongDetector.numberOfMatches(in: url,
+                                          options: NSRegularExpression.MatchingOptions(rawValue: 0),
+                                          range: NSMakeRange(0, url.count)) > 0 {
+            var string = url
+            if !string.contains(Constants.LinkInput.thing) {
+                string = Constants.LinkInput.linkProtocol + string
+            }
+            timer?.invalidate()
+            timer = .scheduledTimer(withTimeInterval: 3, repeats: false) { [weak self] timer in
+                if let url = URL(string: string) {
+                    let config = SFSafariViewController.Configuration()
+                    config.entersReaderIfAvailable = true
+                    let vc = SFSafariViewController(url: url, configuration: config)
+                    self?.present(vc, animated: true)
+                }
             }
         }
     }
     
+    func getProgress(strength: StrengthType) -> ProgressViewInformation {
+        var color: UIColor
+        var percentage: Float
+        switch strength {
+        case .veryStrong:
+            percentage = 1.0
+            color = strength.color
+        case .strong:
+            percentage = 0.75
+            color = strength.color
+        case .medium:
+            percentage = 0.50
+            color = strength.color
+        case .weak:
+            percentage = 0.25
+            color = strength.color
+        }
+        return ProgressViewInformation(color: color, percentage: percentage)
+    }
+    
     @objc private func keyboardWillShow(sender: NSNotification) {
         guard let userInfo = sender.userInfo else { return }
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        guard var keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
         var contentInset:UIEdgeInsets = self.scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height
         scrollView.contentInset = contentInset
@@ -404,7 +428,7 @@ class MainViewController: UIViewController {
         scrollView.contentInset = contentInset
     }
     
-    @objc private func handleTap(gesture: UITapGestureRecognizer) {
+    @objc private func hideKeyboard(gesture: UITapGestureRecognizer) {
         view.endEditing(true)
     }
 }
@@ -451,12 +475,7 @@ extension MainViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         contentView.endEditing(true)
         if textField == linkInput {
-            let isUrl = verifyUrl(string: textField.text ?? "")
-            if isUrl {
-                search(url: textField.text ?? "")
-            }
-        } else {
-            return false
+            tryOpen(url: textField.text ?? "")
         }
         return true
     }
@@ -480,40 +499,33 @@ extension MainViewController: UITextFieldDelegate {
                 limitLabel.textColor = .red
                 limitView.layer.borderColor = UIColor.red.cgColor
             }
-            
         case linkInput:
-            timer?.invalidate()
-            let isUrl = verifyUrl(string: textField.text ?? "")
-            if isUrl {
-                search(url: textField.text ?? "")
-            } else {
-                break
-            }
+            tryOpen(url: textField.text ?? "")
         case passwordInput:
-            minLengthRule.textColor = Constants.titleTextColor
-            minDigitRule.textColor = Constants.titleTextColor
-            minLowercaseRule.textColor = Constants.titleTextColor
-            minUppercaseRule.textColor = Constants.titleTextColor
+            minLengthRuleLabel.textColor = Constants.titleTextColor
+            minDigitRuleLabel.textColor = Constants.titleTextColor
+            minLowercaseRuleLabel.textColor = Constants.titleTextColor
+            minUppercaseRuleLabel.textColor = Constants.titleTextColor
             if !updatedText.isEmpty {
-                let validationId = PasswordStrengthManager.checkValidation(password: updatedText, rules: PasswordRules.passwordRule, minLength: PasswordRules.minPasswordLength)
-                let progressInfo = PasswordStrengthManager.setProgressView(strength: validationId.strength)
-                passwordStrength.setProgress(progressInfo.percentage, animated: false)
-                passwordStrength.progressTintColor = progressInfo.color
-                if updatedText.rangeOfCharacter(from: CharacterSet.lowercaseLetters) != nil {
-                    minLowercaseRule.textColor = .green
+                let implementedRules = passwordStrengthManager.getValidationRules(password: updatedText)
+                implementedRules.forEach { rule in
+                    switch rule {
+                    case .lowerCase:
+                        minLowercaseRuleLabel.textColor = .green
+                    case .uppercase:
+                        minUppercaseRuleLabel.textColor = .green
+                    case .digit:
+                        minDigitRuleLabel.textColor = .green
+                    case .minLength:
+                        minLengthRuleLabel.textColor = .green
+                    }
                 }
-                if updatedText.rangeOfCharacter(from: CharacterSet.uppercaseLetters) != nil {
-                    minUppercaseRule.textColor = .green
-                }
-                if updatedText.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil {
-                    minDigitRule.textColor = .green
-                }
-                
-                if updatedText.count >= Constants.PasswordRules.minLength {
-                    minLengthRule.textColor = .green
-                }
+                let strength = passwordStrengthManager.strength
+                let progressInfo = getProgress(strength: strength)
+                passwordStrengthProgressView.setProgress(progressInfo.percentage, animated: false)
+                passwordStrengthProgressView.progressTintColor = progressInfo.color
             } else  {
-                passwordStrength.setProgress(0, animated: false)
+                passwordStrengthProgressView.setProgress(0, animated: false)
             }
         default:
             break

@@ -6,17 +6,24 @@
 //
 
 import Foundation
+import UIKit
 
 enum StrengthType {
     case weak
     case medium
     case strong
     case veryStrong
-}
-
-public enum ValidationRequiredRule {
-    case lowerCase
-    case uppercase
-    case digit
-    case minmumLength
+    
+    var color: UIColor {
+        switch self {
+        case .weak:
+            return .red
+        case .medium:
+            return .orange
+        case .strong:
+            return .yellow
+        case .veryStrong:
+            return .green
+        }
+    }
 }

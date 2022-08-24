@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08998DE37CC7877415043B5B /* Pods_TextFields_TextFieldsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8633BEA970C7DC9D3354F4 /* Pods_TextFields_TextFieldsUITests.framework */; };
 		A889EDAB9F022B5F56AE83A2 /* Pods_TextFieldsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386DFDCF0FE5A34336B44747 /* Pods_TextFieldsTests.framework */; };
+		FB938FB728B6B23000CE68D7 /* ProgressViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB938FB628B6B23000CE68D7 /* ProgressViewInfo.swift */; };
 		FB94D171289D386700C36E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D170289D386700C36E4D /* AppDelegate.swift */; };
 		FB94D173289D386700C36E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D172289D386700C36E4D /* SceneDelegate.swift */; };
 		FB94D175289D386700C36E4D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D174289D386700C36E4D /* MainViewController.swift */; };
@@ -53,6 +54,7 @@
 		81A6BB806500A3F2FF9AA6E8 /* Pods_TextFields.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextFields.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8633BEA970C7DC9D3354F4 /* Pods_TextFields_TextFieldsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextFields_TextFieldsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73E1DA80989DC31EA69E735 /* Pods-TextFields.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFields.debug.xcconfig"; path = "Target Support Files/Pods-TextFields/Pods-TextFields.debug.xcconfig"; sourceTree = "<group>"; };
+		FB938FB628B6B23000CE68D7 /* ProgressViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewInfo.swift; sourceTree = "<group>"; };
 		FB94D16D289D386700C36E4D /* TextFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB94D170289D386700C36E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB94D172289D386700C36E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				FB94D1A528AEAF1E00C36E4D /* PasswordRules.swift */,
 				FB94D1A728AEB02200C36E4D /* PasswordStrengthType.swift */,
 				FBB018C728AEB33A00B5DED0 /* PasswordStrengthManager.swift */,
+				FB938FB628B6B23000CE68D7 /* ProgressViewInfo.swift */,
 			);
 			path = PasswordStrength;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			files = (
 				FB94D1A828AEB02200C36E4D /* PasswordStrengthType.swift in Sources */,
 				FB94D1A628AEAF1E00C36E4D /* PasswordRules.swift in Sources */,
+				FB938FB728B6B23000CE68D7 /* ProgressViewInfo.swift in Sources */,
 				FB94D175289D386700C36E4D /* MainViewController.swift in Sources */,
 				FBB018C828AEB33A00B5DED0 /* PasswordStrengthManager.swift in Sources */,
 				FB94D171289D386700C36E4D /* AppDelegate.swift in Sources */,
