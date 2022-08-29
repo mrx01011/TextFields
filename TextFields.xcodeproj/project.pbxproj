@@ -9,8 +9,14 @@
 /* Begin PBXBuildFile section */
 		08998DE37CC7877415043B5B /* Pods_TextFields_TextFieldsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8633BEA970C7DC9D3354F4 /* Pods_TextFields_TextFieldsUITests.framework */; };
 		A889EDAB9F022B5F56AE83A2 /* Pods_TextFieldsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 386DFDCF0FE5A34336B44747 /* Pods_TextFieldsTests.framework */; };
+		FB2E3EED28BCEA0E009DC7B4 /* LimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E3EEC28BCEA0E009DC7B4 /* LimitView.swift */; };
+		FB2E3EEF28BCEECD009DC7B4 /* OnlyCharView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E3EEE28BCEECD009DC7B4 /* OnlyCharView.swift */; };
+		FB2E3EF128BCF2C1009DC7B4 /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E3EF028BCF2C1009DC7B4 /* LinkView.swift */; };
+		FB2E3EF328BD2199009DC7B4 /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2E3EF228BD2199009DC7B4 /* PasswordView.swift */; };
+		FB816D3228BCE479007B9B55 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB816D3128BCE479007B9B55 /* Constants.swift */; };
 		FB938FB728B6B23000CE68D7 /* ProgressViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB938FB628B6B23000CE68D7 /* ProgressViewInfo.swift */; };
 		FB938FB928B6B9FA00CE68D7 /* ValidationRequiredRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB938FB828B6B9FA00CE68D7 /* ValidationRequiredRules.swift */; };
+		FB938FBB28B8012200CE68D7 /* NoDigitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB938FBA28B8012200CE68D7 /* NoDigitsView.swift */; };
 		FB94D171289D386700C36E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D170289D386700C36E4D /* AppDelegate.swift */; };
 		FB94D173289D386700C36E4D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D172289D386700C36E4D /* SceneDelegate.swift */; };
 		FB94D175289D386700C36E4D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D174289D386700C36E4D /* MainViewController.swift */; };
@@ -55,8 +61,14 @@
 		81A6BB806500A3F2FF9AA6E8 /* Pods_TextFields.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextFields.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF8633BEA970C7DC9D3354F4 /* Pods_TextFields_TextFieldsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextFields_TextFieldsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E73E1DA80989DC31EA69E735 /* Pods-TextFields.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextFields.debug.xcconfig"; path = "Target Support Files/Pods-TextFields/Pods-TextFields.debug.xcconfig"; sourceTree = "<group>"; };
+		FB2E3EEC28BCEA0E009DC7B4 /* LimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitView.swift; sourceTree = "<group>"; };
+		FB2E3EEE28BCEECD009DC7B4 /* OnlyCharView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyCharView.swift; sourceTree = "<group>"; };
+		FB2E3EF028BCF2C1009DC7B4 /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
+		FB2E3EF228BD2199009DC7B4 /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		FB816D3128BCE479007B9B55 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FB938FB628B6B23000CE68D7 /* ProgressViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewInfo.swift; sourceTree = "<group>"; };
 		FB938FB828B6B9FA00CE68D7 /* ValidationRequiredRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRequiredRules.swift; sourceTree = "<group>"; };
+		FB938FBA28B8012200CE68D7 /* NoDigitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDigitsView.swift; sourceTree = "<group>"; };
 		FB94D16D289D386700C36E4D /* TextFields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextFields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB94D170289D386700C36E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB94D172289D386700C36E4D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +169,8 @@
 				FB94D170289D386700C36E4D /* AppDelegate.swift */,
 				FB94D172289D386700C36E4D /* SceneDelegate.swift */,
 				FB94D174289D386700C36E4D /* MainViewController.swift */,
+				FB816D3128BCE479007B9B55 /* Constants.swift */,
+				FBB23ABD28BD3AA900DFF6A7 /* Views */,
 				FBB018C628AEB2FF00B5DED0 /* PasswordStrength */,
 				FB94D176289D386700C36E4D /* Main.storyboard */,
 				FB94D179289D386D00C36E4D /* Assets.xcassets */,
@@ -202,6 +216,18 @@
 				FB938FB828B6B9FA00CE68D7 /* ValidationRequiredRules.swift */,
 			);
 			path = PasswordStrength;
+			sourceTree = "<group>";
+		};
+		FBB23ABD28BD3AA900DFF6A7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB938FBA28B8012200CE68D7 /* NoDigitsView.swift */,
+				FB2E3EEC28BCEA0E009DC7B4 /* LimitView.swift */,
+				FB2E3EEE28BCEECD009DC7B4 /* OnlyCharView.swift */,
+				FB2E3EF028BCF2C1009DC7B4 /* LinkView.swift */,
+				FB2E3EF228BD2199009DC7B4 /* PasswordView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,12 +472,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB94D1A828AEB02200C36E4D /* PasswordStrengthType.swift in Sources */,
+				FB2E3EF328BD2199009DC7B4 /* PasswordView.swift in Sources */,
 				FB94D1A628AEAF1E00C36E4D /* PasswordRules_Constants.swift in Sources */,
 				FB938FB728B6B23000CE68D7 /* ProgressViewInfo.swift in Sources */,
 				FB94D175289D386700C36E4D /* MainViewController.swift in Sources */,
+				FB2E3EEF28BCEECD009DC7B4 /* OnlyCharView.swift in Sources */,
 				FBB018C828AEB33A00B5DED0 /* PasswordStrengthManager.swift in Sources */,
+				FB816D3228BCE479007B9B55 /* Constants.swift in Sources */,
 				FB94D171289D386700C36E4D /* AppDelegate.swift in Sources */,
+				FB938FBB28B8012200CE68D7 /* NoDigitsView.swift in Sources */,
 				FB94D173289D386700C36E4D /* SceneDelegate.swift in Sources */,
+				FB2E3EF128BCF2C1009DC7B4 /* LinkView.swift in Sources */,
+				FB2E3EED28BCEA0E009DC7B4 /* LimitView.swift in Sources */,
 				FB938FB928B6B9FA00CE68D7 /* ValidationRequiredRules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
