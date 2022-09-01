@@ -52,13 +52,12 @@ class LimitView: UIView {
     private func setupUI() {
         addSubview(title)
         title.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalToSuperview()
+            make.leading.top.equalToSuperview()
         }
         addSubview(limitLabel)
         limitLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview()
-            make.top.equalToSuperview()
+            make.trailing.top.equalToSuperview()
+            make.leading.equalTo(title.snp.trailing)
         }
         addSubview(inputContentView)
         inputContentView.snp.makeConstraints { make in
@@ -98,9 +97,9 @@ extension LimitView: UITextFieldDelegate {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        let lngthToAdd = updatedText.count
-        limitLabel.text = "\(Constants.InputLimit.charLimit - lngthToAdd)/10"
-        if lngthToAdd <= Constants.InputLimit.charLimit {
+        let lengthToAdd = updatedText.count
+        limitLabel.text = "\(Constants.InputLimit.charLimit - lengthToAdd)/10"
+        if lengthToAdd <= Constants.InputLimit.charLimit {
             limitLabel.textColor = Constants.titleTextColor
             inputContentView.layer.borderColor = Constants.inputBorderColor
         } else {

@@ -9,33 +9,47 @@ import XCTest
 
 class TextFieldsUITests: XCTestCase {
 
+    var app: XCUIApplication!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+        try super.setUpWithError()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launch()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        app = nil
+        try super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMaskInput() throws {
+        let scrollViewsQuery = app.scrollViews
+        let elementsQuery = scrollViewsQuery.otherElements
+        
+        let wwwwwDddddTextField = elementsQuery.textFields["wwwww-ddddd"]
+        wwwwwDddddTextField.tap()
+        scrollViewsQuery.otherElements.containing(.staticText, identifier:"Text Fields").children(matching: .other).element(boundBy: 2).children(matching: .other).element.children(matching: .textField).element.typeText("a123")
+        let result = elementsQuery.textFields["a"]
+        
+        XCTAssert(result.exists)
     }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    func testNoDigitsInput() throws {
+        app.scrollViews.otherElements.containing(.staticText, identifier:"Text Fields").children(matching: .other).element(boundBy: 0).children(matching: .other).element.children(matching: .textField).element.tap()
+        app.scrollViews.otherElements.containing(.staticText, identifier:"Text Fields").children(matching: .other).element(boundBy: 0).children(matching: .other).element.children(matching: .textField).element.typeText("Hell10o")
+        
+        let result = app.scrollViews.otherElements.textFields["Hello"]
+        
+        XCTAssert(result.exists)
     }
+    
+    func testLimitInput() throws {
+        app.scrollViews.otherElements.containing(.staticText, identifier:"Text Fields").children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .textField).element.tap()
+        app.scrollViews.otherElements.containing(.staticText, identifier:"Text Fields").children(matching: .other).element(boundBy: 1).children(matching: .other).element.children(matching: .textField).element.typeText("123")
+        
+        let result = app.scrollViews.otherElements.staticTexts["7/10"]
+        XCTAssert(result.exists)
+    }
+    
 }

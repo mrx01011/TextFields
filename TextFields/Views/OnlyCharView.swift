@@ -47,8 +47,7 @@ class OnlyCharView: UIView {
     private func setupUI() {
         addSubview(title)
         title.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalToSuperview()
+            make.leading.trailing.top.equalToSuperview()
         }
         addSubview(inputContentView)
         inputContentView.snp.makeConstraints { make in

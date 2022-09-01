@@ -6,6 +6,7 @@
 //
 import SnapKit
 import UIKit
+import SafariServices
 
 final class MainViewController: UIViewController {
     //MARK: UIElements
@@ -35,17 +36,8 @@ final class MainViewController: UIViewController {
         setupUI()
         defaultConfiguration()
         observeKeyboardNotificaton()
-        addTapToHideKeyboard()
     }
     //MARK: Methods
-    private func addTapToHideKeyboard() {
-        let tap = UITapGestureRecognizer(
-            target: self,
-            action: #selector(hideKeyboard(gesture:))
-        )
-        contentView.addGestureRecognizer(tap)
-    }
-    
     private func setupUI() {
         //Top safe area
         view.addSubview(topSafeAreaView)
@@ -57,20 +49,15 @@ final class MainViewController: UIViewController {
         //Scroll view
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.trailing.equalTo(view.safeAreaLayoutGuide)
-            make.leading.equalTo(view.safeAreaLayoutGuide)
+            make.trailing.leading.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(topSafeAreaView.snp.bottom)
             make.bottomMargin.equalToSuperview()
         }
         //Content view
         scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
-            make.height.equalTo(scrollView.snp.height)
-            make.width.equalTo(scrollView.snp.width)
-            make.leading.equalTo(scrollView.snp.leading)
-            make.trailing.equalTo(scrollView.snp.trailing)
-            make.top.equalTo(scrollView.snp.top)
-            make.bottom.equalTo(scrollView.snp.bottom)
+            make.height.width.equalTo(scrollView)
+            make.edges.equalTo(scrollView)
         }
         //Header view
         contentView.addSubview(headerLabel)
@@ -113,10 +100,20 @@ final class MainViewController: UIViewController {
     private func defaultConfiguration() {
         contentView.backgroundColor = .white
         view.backgroundColor = .white
+        linkView.delegate = self
+        addTapToHideKeyboard()
     }
 }
 //MARK: Keyboard
 extension MainViewController {
+    private func addTapToHideKeyboard() {
+        let tap = UITapGestureRecognizer(
+            target: self,
+            action: #selector(hideKeyboard(gesture:))
+        )
+        contentView.addGestureRecognizer(tap)
+    }
+    
     private func observeKeyboardNotificaton() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow(sender:)),
@@ -132,17 +129,26 @@ extension MainViewController {
         guard let userInfo = sender.userInfo else { return }
         guard var keyboardFrame = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else { return }
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        var contentInset: UIEdgeInsets = self.scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height
         scrollView.contentInset = contentInset
     }
     
     @objc private func keyboardWillHide(sender: NSNotification) {
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        let contentInset: UIEdgeInsets = UIEdgeInsets.zero
         scrollView.contentInset = contentInset
     }
     
     @objc private func hideKeyboard(gesture: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+}
+//MARK: Link View Delegate
+extension MainViewController: LinkViewDelegate {
+    func openUrl(url: URL) {
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = true
+        let vc = SFSafariViewController(url: url, configuration: config)
+        self.present(vc, animated: true)
     }
 }

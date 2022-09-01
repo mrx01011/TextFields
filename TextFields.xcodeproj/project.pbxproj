@@ -32,6 +32,7 @@
 		FB94D1A828AEB02200C36E4D /* PasswordStrengthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB94D1A728AEB02200C36E4D /* PasswordStrengthType.swift */; };
 		FBADCBF879461ADCCAB2AFE7 /* Pods_TextFields.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A6BB806500A3F2FF9AA6E8 /* Pods_TextFields.framework */; };
 		FBB018C828AEB33A00B5DED0 /* PasswordStrengthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB018C728AEB33A00B5DED0 /* PasswordStrengthManager.swift */; };
+		FBB23AC028BE8C3100DFF6A7 /* NoDigitsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB23ABF28BE8C3100DFF6A7 /* NoDigitsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		FB94D1A528AEAF1E00C36E4D /* PasswordRules_Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRules_Constants.swift; sourceTree = "<group>"; };
 		FB94D1A728AEB02200C36E4D /* PasswordStrengthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthType.swift; sourceTree = "<group>"; };
 		FBB018C728AEB33A00B5DED0 /* PasswordStrengthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthManager.swift; sourceTree = "<group>"; };
+		FBB23ABF28BE8C3100DFF6A7 /* NoDigitsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDigitsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				FB94D172289D386700C36E4D /* SceneDelegate.swift */,
 				FB94D174289D386700C36E4D /* MainViewController.swift */,
 				FB816D3128BCE479007B9B55 /* Constants.swift */,
+				FBB23ABE28BE8C0700DFF6A7 /* Managers */,
 				FBB23ABD28BD3AA900DFF6A7 /* Views */,
 				FBB018C628AEB2FF00B5DED0 /* PasswordStrength */,
 				FB94D176289D386700C36E4D /* Main.storyboard */,
@@ -228,6 +231,14 @@
 				FB2E3EF228BD2199009DC7B4 /* PasswordView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FBB23ABE28BE8C0700DFF6A7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				FBB23ABF28BE8C3100DFF6A7 /* NoDigitsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +495,7 @@
 				FB94D173289D386700C36E4D /* SceneDelegate.swift in Sources */,
 				FB2E3EF128BCF2C1009DC7B4 /* LinkView.swift in Sources */,
 				FB2E3EED28BCEA0E009DC7B4 /* LimitView.swift in Sources */,
+				FBB23AC028BE8C3100DFF6A7 /* NoDigitsManager.swift in Sources */,
 				FB938FB928B6B9FA00CE68D7 /* ValidationRequiredRules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

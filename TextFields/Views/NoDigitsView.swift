@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 class NoDigitsView: UIView {
+    //MARK: No Digits Manager
+    private let noDigitsManager = NoDigitsManager()
     //MARK: UIElements
     private let title: UILabel = {
         let label = UILabel()
@@ -83,8 +85,6 @@ extension NoDigitsView: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacters = CharacterSet.decimalDigits.inverted
-        let characterSet = CharacterSet(charactersIn: string)
-        return allowedCharacters.isSuperset(of: characterSet)
+        return noDigitsManager.isNoDigit(inString: string)
     }
 }

@@ -7,7 +7,10 @@
 
 import UIKit
 import SnapKit
-import SafariServices
+
+protocol LinkViewDelegate: AnyObject {
+    func openUrl(url: URL)
+}
 
 class LinkView: UIView {
     //MARK: UIElements
@@ -32,6 +35,7 @@ class LinkView: UIView {
         textfield.returnKeyType = .go
         return textfield
     }()
+    weak var delegate: LinkViewDelegate?
     //MARK: Timer
     weak private var timer: Timer?
     //MARK: Initialization
@@ -48,8 +52,7 @@ class LinkView: UIView {
     private func setupUI() {
         addSubview(title)
         title.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalToSuperview()
+            make.leading.trailing.top.equalToSuperview()
         }
         addSubview(inputContentView)
         inputContentView.snp.makeConstraints { make in
@@ -69,7 +72,7 @@ class LinkView: UIView {
         inputTextField.delegate = self
     }
     
-    private func tryOpen(urlFromString string: String) {
+    func tryOpen(urlFromString string: String) {
         let types: NSTextCheckingResult.CheckingType = [.link]
         let detector = try? NSDataDetector(types: types.rawValue)
         guard let strongDetector = detector,
@@ -87,10 +90,7 @@ class LinkView: UIView {
         timer?.invalidate()
         timer = .scheduledTimer(withTimeInterval: 3, repeats: false) { timer in
             if let url = URL(string: protocoledString) {
-                let config = SFSafariViewController.Configuration()
-                config.entersReaderIfAvailable = true
-                let vc = SFSafariViewController(url: url, configuration: config)
-                UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true)
+                self.delegate?.openUrl(url: url)
             }
         }
     }
